@@ -30,7 +30,7 @@ More info: https://beyondco.de/blog/tailwind-jit-compiler-via-cdn
                         </div>
                     </div>
 
-                    <!-- Toggle -->
+                    <!-- Toggle - -->
                     <div class="flex justify-center mb-6">
                         <div class="relative flex w-full p-1 bg-gray-50 rounded">
                             <span class="absolute inset-0 m-1 pointer-events-none" aria-hidden="true">
