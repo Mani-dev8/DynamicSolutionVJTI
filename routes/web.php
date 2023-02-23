@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/home',[ServicesController::class,'serviceFetch']);
 Route::get('/appointment',[TechnicianController::class, 'techniciansFetch']);
  Route::view('/login','login');
+ Route::view('/signup','signup');
  Route::view('/cart','cart');
  Route::view('/services','services');
  Route::view('/contact','contact');
