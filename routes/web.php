@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ServicesController;
 use App\Http\Controllers\TechnicianController;
 use App\Http\Controllers\UserAuth;
@@ -23,6 +24,10 @@ Route::get('/appointment',[TechnicianController::class, 'techniciansFetch']);
  Route::view('/services','services');
  Route::view('/contact','contact');
  Route::view('/checkout','checkout');
+ Route::view('/checkout_page','checkout');
+ Route::view('/account','accounts');
+ Route::get('/summary',[PaymentController::class,'payFunc']);
+ Route::post('/order',[PaymentController::class,'orderFunc']);
  Route::controller(UserAuth::class)->group(function(){
     Route::post('/user','uVerification')->name('user');//parameter name inside the name funciton should be same as 1 parameter of post funct 
  });

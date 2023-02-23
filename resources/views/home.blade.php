@@ -1,6 +1,31 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" integrity="sha512-vKMx8UnXk60zUwyUnUPM3HbQo8QfmNx7+ltw8Pm5zLusl1XIfwcxo8DbWCqMGKaWeNxWA8yrx5v3SaVpMvR3CA==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+<script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
 @extends('welcome')
 @section('content')
 <style>
+    .toast-center {
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .toast-error {
+        background-color: red;
+    }
+
+    .toast-success {
+        background-color: #4cbb17;
+        font-weight: 500;
+        height: 80px;
+        width: 200px;
+    }
+
     .hide {
         opacity: 0;
         transition: all 2s;
@@ -33,6 +58,36 @@
         animation: movex2 2s 1s;
     }
 
+    #currLoc {
+        transition: all 1s;
+        animation: glow 2s linear infinite;
+    }
+
+    @keyframes glow {
+        0% {
+            transform: scale(1);
+        }
+
+        25% {
+            transform: scale(1.1);
+            /* background-color: gray; */
+        }
+
+        50% {
+            transform: scale(1.2);
+            /* background-color: dimgray; */
+        }
+
+        75% {
+            transform: scale(1.1);
+            /* background-color: dimgray; */
+        }
+
+        100% {
+            transform: scale(1);
+        }
+    }
+
     @keyframes movex {
         0% {
             transform: translateX(-400px);
@@ -43,6 +98,63 @@
         0% {
             transform: translateX(-600px);
         }
+    }
+
+    .custom-select {
+        position: relative;
+        display: inline-block;
+        border-radius: 4px;
+        font-size: 16px;
+        font-weight: bold;
+        overflow: hidden;
+    }
+
+    .custom-select select {
+        width: 100%;
+        height: 100%;
+        padding: 10px;
+        border: none;
+        background-color: #f5f5f5;
+        color: #333;
+        font-size: 16px;
+        font-weight: bold;
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        border-radius: 5px;
+    }
+
+    .arrow {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 30px;
+        height: 100%;
+        background-color: #f5f5f5;
+        color: #333;
+        pointer-events: none;
+        transition: transform 0.3s ease;
+        border-radius: 5px;
+    }
+
+    .arrow::before {
+        content: "\25BC";
+        position: absolute;
+        top: 50%;
+        right: 50%;
+        transform: translate(50%, -50%);
+    }
+
+    .custom-select.open .arrow {
+        transform: rotate(180deg);
+    }
+
+    .custom-select select:focus {
+        outline: none;
+    }
+
+    .custom-select select:hover {
+        cursor: pointer;
     }
 </style>
 <div class="w-full h-fit relative mt-10">
@@ -95,7 +207,7 @@
                 </div>
             </div>
         </div>
-        <div class="relative px-4 sm:px-0">
+        <!-- <div class="relative px-4 sm:px-0">
             <div class="absolute inset-0 bg-gray-100 h-1/2"></div>
             <div class="relative grid mx-auto overflow-hidden bg-white divide-y rounded shadow sm:divide-y-0 sm:divide-x sm:max-w-screen-sm sm:grid-cols-3 lg:max-w-screen-md">
                 <div class="inline-block p-8 text-center">
@@ -123,9 +235,38 @@
                     <p class="font-bold tracking-wide text-gray-800">Working harder</p>
                 </div>
             </div>
-        </div>
-    </div>
+        </div> -->
 
+        <form id='proceed_form' class="relative px-4 sm:px-0" action="appointment">
+            <input type="text" value="" name="nameindex" id="hfindex" hidden>
+            <div class="absolute inset-0 bg-gray-100 h-1/2"></div>
+            <div class="relative py-10 flex justify-evenly items-center flex-col sm:flex-row gap-5 mx-auto overflow-hidden bg-white divide-y rounded shadow w-[60%] sm:w-full sm:divide-y-0 sm:divide-x sm:max-w-screen-sm sm:grid-cols-3 lg:max-w-screen-md">
+                <div class="custom-select w-[67%] sm:w-[29%]">
+                    <select id="selectBox">
+                        <option value="" disabled selected hidden class="font-xs">Select A Category</option>
+                        <option value="1">Appliances</option>
+                        <option value="2">Computers</option>
+                        <option value="3">Mobile Devices</option>
+                        <option value="4">Plumbers</option>
+                    </select>
+                    <div class="arrow"></div>
+                </div>
+
+                <div class="flex gap-4 justify-center items-center px-3 py-2  border-2 border-white rounded-md">
+                    <p class="font-semibold">Get Current Location</p>
+                    <div class="h-9 w-9 cursor-pointer rounded-full bg-gray-400 flex justify-center items-center hover:bg-gray-500" id="currLoc">
+                        <i class="fa-solid fa-location-crosshairs text-xl"></i>
+                    </div>
+                </div>
+
+                <button class="h-9 w-32 bg-indigo-600 font-semibold rounded-md text-white cursor-pointer" id="proceed-category" onclick="return event.preventDefault()">Proceed
+                </button>
+
+                <input type="text" value="" id="hflat" hidden>
+                <input type="text" value="" id="hflng" hidden>
+            </div>
+        </form>
+    </div>
 
     <!-- <div class="h-[90%] max-w-[1340px]  w-full  absolute bottom-0 left-1/2 translate-x-[-50%] grid grid-cols-2 px-12">
         <div class="flex flex-col gap-3 items-start justify-center ">
@@ -749,6 +890,14 @@
     <!-- //WHY CHOOSE US -->
 </div>
 <script>
+    const select = document.querySelector('.custom-select select');
+    const arrow = document.querySelector('.custom-select .arrow');
+
+    select.addEventListener('click', function() {
+        this.parentNode.classList.toggle('open');
+        arrow.classList.toggle('open');
+    });
+
     const observer = new IntersectionObserver((enteries) => {
         enteries.forEach((entry) => {
             console.log(enteries)
@@ -766,5 +915,74 @@
     hiddenElements.forEach(element => {
         observer.observe(element);
     });
+
+    function initMap() {
+        var location = document.getElementById("currLoc");
+        let latitude;
+        let longitude;
+
+        location.addEventListener('click', () => {
+            navigator.geolocation.getCurrentPosition(function(position) {
+                    latitude = position.coords.latitude,
+                        longitude = position.coords.longitude
+                    document.getElementById("hflat").value = latitude;
+                    document.getElementById("hflng").value = longitude;
+                    toastr.success('Current Location Fetched', 'Success', {
+                        closeButton: true,
+                        progressBar: true,
+                        positionClass: 'toast-center'
+                    });
+                    location.style.animation = "none";
+                },
+                function(error) {
+                    switch (error.code) {
+                        case error.PERMISSION_DENIED:
+                            alert("User denied the request for geolocation.");
+                            break;
+                        case error.POSITION_UNAVAILABLE:
+                            alert("Location information is unavailable.");
+                            break;
+                        case error.TIMEOUT:
+                            alert("The request to get user location timed out.");
+                            break;
+                        case error.UNKNOWN_ERROR:
+                            alert("An unknown error occurred.");
+                            break;
+                    }
+                }
+            );
+        })
+    }
+
+    let proceed = document.getElementById("proceed-category");
+    proceed.addEventListener('click', () => {
+        var lat = document.getElementById("hflat").value;
+        var lng = document.getElementById("hflng").value;
+
+        if (lat == "" && lng == "") {
+            toastr.error('Allow to track location', 'Error', {
+                closeButton: true,
+                progressBar: true,
+                positionClass: 'toast-center',
+            });
+        } else {
+            var t = document.getElementById("selectBox");
+            var selectedText = t.options[t.selectedIndex].text;
+
+            if (t.selectedIndex == 0) {
+                toastr.error('Please select a category', 'Error', {
+                    closeButton: true,
+                    progressBar: true,
+                    positionClass: 'toast-center'
+                });
+            } else {
+                document.getElementById("hfindex").value = t.selectedIndex;
+                const form=document.querySelector('#proceed_form');
+                form.submit();
+            }
+            console.log(selectedText);
+        }
+    })
 </script>
+<script async='false' defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCbO90cT0yC58yZySAryqrikz2hBfxPnqo&libraries=geometry&callback=initMap"></script>
 @endsection
