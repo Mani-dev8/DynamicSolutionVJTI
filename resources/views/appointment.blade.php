@@ -17,7 +17,7 @@
 
     #modal {
         background-color: white;
-        width: 45%;
+        width: 70%;
         margin: 0 auto;
         position: absolute;
         top: 50%;
@@ -143,16 +143,7 @@
         line-height: 36px;
     }
 
-    /* body {
-                    background-color: #d1d7dc;
-                    font-family: 'Fira Sans', sans-serif;
-                }
-                *, *::before, *::after {
-                    box-sizing: inherit;
-                }
-                html {
-                    box-sizing: border-box;
-                } */
+
     code {
         background-color: #9aa3ac;
         padding: 0 8px;
@@ -174,7 +165,6 @@
                 </div>
             </div>
         </div>
-
         <div class="w-[40%] flex justify-end items-end px-5">
             <div class="overlay hidden"></div>
             <button onclick="dataPass(this)" class="btn hidden btn-open cursor-pointer font-bold text-white text-xl bg-indigo-900 h-10 w-24 rounded-lg hover:bg-indigo-800" id="openModalBtn">NEXT</button>
@@ -186,14 +176,18 @@
 <!-- <button id="cancelModalBtn">Cancel</button> -->
 
 <div id="modalBackground">
-    <div id="modal" class="flex flex-col">
-        <form action="/home" id='form_model'>
+    <div id="modal" class="flex flex-col relative">
+        <button class="h-10 w-10 rounded-full bg-gray-300 font-semibold absolute right-3 top-3" id="cancelModalBtn">⨉</button>
+
+        <form action="summary" id='form_model' method=''>
+
+            <input type="hidden" name="selected_slot" id="slot" value=''>
+            <input type="hidden" name="selected_technician" id="hf_technician" value=''>
             <div class="flex w-full justify-between items-center">
                 <div class="flex gap-5 px-5">
                     <i class="fa fa-calendar-day text-xl text-indigo-900"></i>
                     <p class="font-semibold text-lg text-black ">Appointment Timings</p>
                 </div>
-                <button class="h-10 w-10 rounded-full bg-gray-300 font-semibold" id="cancelModalBtn">⨉</button>
             </div>
 
             <div class="flex">
@@ -206,7 +200,7 @@
             </div>
 
             <div class="inputGroup">
-                <input id="option1" name="option1" type="checkbox" onchange="validateCheckbox()" />
+                <input id="option1" name="rapid_radio" type="checkbox" value="0" onchange="validateCheckbox()" />
                 <label for="option1" class="font-semibold text-gray-500 rounded-md">Home service available within 2 Hours</label>
             </div>
 
@@ -215,7 +209,7 @@
             <div class="flex flex-row gap-2 pt-2">
                 <div class="flex flex-col w-[50%]">
                     <label for="date" class="text-md font-semibold py-1">Select a date:</label>
-                    <input type="date" id="date" min="" max="" onchange="populateTimeslots()" class="border-2 border-indigo-900 rounded-md text-gray-500 font-semibold">
+                    <input type="date" id="date" name='date_selected' min="" max="" onchange="populateTimeslots()" class="border-2 border-indigo-900 rounded-md text-gray-500 font-semibold">
                 </div>
 
                 <div class="flex flex-col w-[50%]">
@@ -237,9 +231,21 @@
 <input type="hidden" id="tdata" data-data="{{ json_encode($t_data) }}">
 
 <script>
+    var time_slot = document.getElementById("time");
+    hf_slot = document.querySelector('#slot')
+    console.log(time_slot)
+    time_slot.addEventListener('change', () => {
+        const selectedvalue = time_slot.value;
+        console.log('sellected' + selectedvalue)
+        hf_slot.value = selectedvalue;
+        console.log(hf_slot)
+    });
+
     function dataPass(e) {
         var t_name = document.querySelector('#t_name');
         var t_dis = document.querySelector('#t_dis');
+        document.querySelector('#hf_technician').value = t_name.innerText;
+        console.log(document.querySelector('#hf_technician').value)
 
         var t_name_model = document.querySelector('#t_name_model');
         var t_dis_model = document.querySelector('#t_dis_model');
@@ -257,7 +263,8 @@
             name: e.name,
             place: e.t_place,
             ratting: e.ratting,
-            job: e.s_category
+            job: e.s_category,
+            icon: e.icon
         });
     });
 
@@ -479,51 +486,13 @@
 
         map = new google.maps.Map(document.getElementById("map"), {
             center: {
-                lat: 19.19824,
-                lng: 72.949013
+                lat: 19.022480011,
+                lng: 72.855026245
             },
-            zoom: 12,
+            zoom: 14,
             // mapId: "8e0a97af9386fef",
             styles: custom,
         });
-
-        var ac = [{
-                name: "Suraj Singh",
-                lat: 19.202130706369797,
-                lng: 72.9083292536621,
-                job: "Electrician",
-                place: "JP Road, Nehru Nagar, Kandivli",
-            },
-            {
-                name: "Kunal",
-                lat: 19.202779148486115,
-                lng: 73.00548959301757,
-                job: "Electrician",
-                place: "Ghuolai Nagar Road, Anand Vihar Complex, Thane 400605, Maharashtra Anand Vihar Complex Thane India ",
-            },
-            {
-                name: "Sandeep",
-                lat: 19.20829080326903,
-                lng: 72.85030770825195,
-                job: "Electrician",
-                place: "JP Road, Nehru Nagar, Kandivli",
-            },
-            {
-                name: "utkarsh",
-                lat: 19.202130706369797,
-                lng: 73.09612680004882,
-            },
-            {
-                name: "Kunal",
-                lat: 19.147652451155903,
-                lng: 73.00926614331054,
-            },
-            {
-                name: "Sandeep",
-                lat: 19.29742423122495,
-                lng: 73.06145120190429,
-            },
-        ];
 
         var openInfoWindow = null;
         var selectedMarker = null;
@@ -537,12 +506,13 @@
 
 
         for (var i = 0; i < technician.length; i++) {
-            var electric =
+            var appliances =
                 "https://cdn-icons-png.flaticon.com/32/4003/4003447.png";
             var acRepair =
                 "https://img.icons8.com/color/48/null/user-location.png";
             var plumbers =
                 "";
+            console.log(technician)
 
             var markerImage = acRepair;
             (function() {
@@ -555,7 +525,7 @@
                     },
                     map: map,
                     title: electrician.name,
-                    icon: markerImage,
+                    icon: electrician.icon,
                     animation: google.maps.Animation.BOUNCE,
                 });
 
@@ -576,11 +546,11 @@
                         ) / 1000;
 
                     var infoWindow = new google.maps.InfoWindow({
-                        content: `<div style="text-align: center; max-width: 150px"> <h1 class="text-lg font-bold text-indigo-900 flex justify-center items-center gap-3">
+                        content: `<div style="text-align: center; max-width: 160px" class='pr-1.5'> <h1 class="text-base font-bold text-indigo-900 flex  flex-wrap justify-center items-center gap-x-3 ">
                         ${electrician.name}
-                        <p  class='text-md font-bold text-green-500'>
+                        <p  class='text-sm font-bold text-green-500'>
                         ${ distance.toFixed(0)}
-                         km</p> </h1> <h4 class='font-semibold text-md'>
+                         km</p> </h1> <h4 class='pt-2 font-semibold text-xs'>
                         ${electrician.place} </h4></div> <br />
                                 `,
                     });
@@ -601,7 +571,7 @@
                         ratting = document.querySelector('#ratting');
                         ratting.classList.add('border', 'border-gray-500')
                         ratting.innerHTML = `<i class="fa-solid fa-star text-green-700"></i>
-                    <p id="ratting" class="text-xl font-semibold text-green-700">${electrician.ratting}</p>`
+                        <p id="ratting" class="text-xl font-semibold text-green-700">${electrician.ratting}</p>`
                         myDiv.innerHTML =
                             `<div class='flex justify-center items-center gap-3 flex-col md:flex-row'>
 
@@ -812,7 +782,6 @@
     }
 
     // -------------  Modal  -------------------
-
     const openModalBtn = document.getElementById("openModalBtn");
     const modalBackground = document.getElementById("modalBackground");
     const cancelModalBtn = document.getElementById("cancelModalBtn");
@@ -820,8 +789,14 @@
     function validateCheckbox() {
         var checkstate = document.getElementById("option1");
         if (checkstate.checked) {
+            checkstate.value = "1"
+            console.log(checkstate.value)
+
             document.getElementById("date").disabled = true;
         } else {
+            checkstate.value = "0"
+            console.log(checkstate.value)
+
             document.getElementById("date").disabled = false;
         }
     }
@@ -891,7 +866,7 @@
     dateInput.addEventListener("change", function() {
         if (dateInput.value !== "") {
             timeInput.disabled = false;
-            submitButton.disabled =false;
+            submitButton.disabled = false;
         } else {
             timeInput.disabled = true;
             submitButton.disabled = true;
@@ -909,10 +884,9 @@
     function processData(e) {
         const selectedDate = dateInput.value;
         const selectedTime = timeInput.value;
-
         var e = document.getElementById("time");
         var text = e.options[e.selectedIndex].text;
-        var form_model=document.querySelector('#form_model');
+        var form_model = document.querySelector('#form_model');
         console.log(form_model)
     }
 
@@ -932,7 +906,7 @@
             0,
             0
         );
-        
+
         if (selectedDate.getTime() === currentDateTime.getTime()) {
             const currentHour = currentDate.getHours();
             const availableTimes = ["4pm-6pm", "9pm-11pm"].filter((time) => {
