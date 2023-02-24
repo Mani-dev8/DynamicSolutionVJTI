@@ -334,13 +334,13 @@
         }
     }
 </style>
-<div class=" sm:px-10 sm:py-12 px-3 py-4 bg-violet-900 bg-opacity-20">
-    <div class=" rounded-xl overflow-hidden cont flex flex-col md:flex-row shadow-lg sm:h-[74vh] h-[80vh] ">
-        <div class="left-side h-full w-full md:w-[65%] pt-14" style="background-color: whitesmoke;">
+<div class="h-[100vh] sm:px-10 sm:py-12 px-3 py-4 bg-violet-900 bg-opacity-20">
+    <div class=" rounded-xl h-[700px] overflow-hidden cont flex flex-col md:flex-row shadow-lg ">
+        <div class="left-side h-full w-full md:w-[65%] " style="background-color: whitesmoke;">
             <!-- <div class="px-10 w-full h-[19%]">
             <img src="login-images\WhatsApp Image 2023-02-17 at 21.25.10.jpeg">
         </div>      -->
-            <div class="h-[81%] flex flex-col justify-center gap-2 items-center ">
+            <div class="h-[100%] flex flex-col justify-center gap-2 items-center ">
                 <div class="flex flex-col justify-center items-center gap-1">
                     <h1 class="text-indigo-500 text-3xl font-bold tracking-wide">Sign in to Account</h1>
                     <img src="login-images\delete (1).png" class="text-center h-9 w-14">
@@ -366,7 +366,7 @@
                         <div class="forgot h-10 flex justify-end mt-[-25px] w-[40%] md:w-[33%]">
                             <a href="#" class="text text-md sm:text-lg font-bold text-black cursor-pointer hover:text-gray-600">Forgot Password ?</a>
                         </div>
-                        <input type="submit" id="login_btn" value="Sign In" class="h-11 w-36 bg-indigo-500 text-white text-xl font-semibold rounded-3xl mt-1 cursor-pointer hover:bg-indigo-400 ">
+                        <input type="submit" id="login_btn" value="Sign In" class="h-11 w-36 bg-purple-500 shadow-md hover:shadow-none shadow-purple-300 text-white text-xl font-semibold rounded-3xl mt-1 cursor-pointer hover:bg-purple-700  ">
                     </div>
                 </form>
 

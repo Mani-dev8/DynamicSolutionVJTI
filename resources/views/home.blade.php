@@ -391,7 +391,78 @@
     </div>
 </div>
 
+
+
+
+
+
+
 <!-- //================================================================= -->
+
+
+
+
+<!-- OUR SERVICES -->
+<div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+    <div class="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
+        <div>
+            <p class="inline-block px-3 py-px mb-4 text-xs font-semibold tracking-wider text-teal-900 uppercase rounded-full bg-teal-accent-400">
+                Our Services
+            </p>
+        </div>
+        <h2 class="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl md:mx-auto">
+            <span class="relative inline-block">
+                <svg viewBox="0 0 52 24" fill="currentColor" class="absolute top-0 left-0 z-0 hidden w-32 -mt-8 -ml-20 text-blue-gray-100 lg:w-32 lg:-ml-28 lg:-mt-10 sm:block">
+                    <defs>
+                        <pattern id="18302e52-9e2a-4c8e-9550-0cbb21b38e55" x="0" y="0" width=".135" height=".30">
+                            <circle cx="1" cy="1" r=".7"></circle>
+                        </pattern>
+                    </defs>
+                    <rect fill="url(#18302e52-9e2a-4c8e-9550-0cbb21b38e55)" width="52" height="24"></rect>
+                </svg>
+                <span class="relative">The</span>
+            </span>
+            Lorem ipsum dolor
+        </h2>
+        <p class="text-base text-gray-700 md:text-lg">
+            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque rem aperiam, eaque ipsa quae.
+        </p>
+    </div>
+    <div class="grid gap-8 row-gap-5 lg:grid-cols-3">
+        @foreach($serv_data as $item )
+        <div class="relative  p-px overflow-hidden transition duration-300 transform border rounded shadow-sm hover:scale-105 group hover:shadow-xl">
+
+            <div class="absolute bottom-0 left-0 w-full h-1 duration-300 origin-left transform scale-x-0 bg-deep-purple-400 group-hover:scale-x-100"></div>
+            <div class="absolute bottom-0 left-0 w-1 h-full duration-300 origin-bottom transform scale-y-0 bg-deep-purple-accent-400 group-hover:scale-y-100"></div>
+            <div class="absolute top-0 left-0 w-full h-1 duration-300 origin-right transform scale-x-0 bg-deep-purple-accent-400 group-hover:scale-x-100"></div>
+            <div class="absolute bottom-0 right-0 w-1 h-full duration-300 origin-top transform scale-y-0 bg-deep-purple-accent-400 group-hover:scale-y-100"></div>
+            <div class="relative p-5 rounded-sm ">
+                <div class="flex flex-col mb-2 lg:items-center lg:flex-row">
+                    <div class="flex items-center justify-center w-10 h-10 mb-4 mr-2 rounded-full  lg:mb-0">
+                        <img src="{{$item->icon}}" />
+                    </div>
+                    <h6 class="font-semibold leading-5 text-black">{{$item->s_category}}</h6>
+                </div>
+                <div class="aspect-video mt-6 mb-8">
+                    <img src="{{$item->image}}" alt="" srcset="" class=" rounded   h-full w-full object-cover ">
+                </div>
+                <p class="mb-2 text-sm text-black ">
+                    {{$item->s_des}}
+                </p>
+                <a href="/" aria-label="" class="inline-flex items-center text-sm font-semibold transition-colors duration-200 text-purple-500 hover:text-purple-800">Learn more</a>
+            </div>
+        </div>
+        @endforeach
+    </div>
+</div>
+
+<!-- //OUR SERVICES -->
+
+
+
+
+
+
 
 
 <div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
@@ -496,6 +567,47 @@
 </div>
 
 
+
+
+<!-- COMPANY OVERVIEW  -->
+
+
+<section class="mx-auto flex max-w-lg flex-col px-4 py-10 lg:max-w-screen-xl lg:flex-row">
+    <div class="max-w-md pr-20 lg:pt-28">
+        <img src="1676798059751.png" alt="" />
+    </div>
+    <div class="">
+        <div class="mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-indigo-600 text-white shadow-lg shadow-indigo-600/20">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 7.125C2.25 6.504 2.754 6 3.375 6h6c.621 0 1.125.504 1.125 1.125v3.75c0 .621-.504 1.125-1.125 1.125h-6a1.125 1.125 0 01-1.125-1.125v-3.75zM14.25 8.625c0-.621.504-1.125 1.125-1.125h5.25c.621 0 1.125.504 1.125 1.125v8.25c0 .621-.504 1.125-1.125 1.125h-5.25a1.125 1.125 0 01-1.125-1.125v-8.25zM3.75 16.125c0-.621.504-1.125 1.125-1.125h5.25c.621 0 1.125.504 1.125 1.125v2.25c0 .621-.504 1.125-1.125 1.125h-5.25a1.125 1.125 0 01-1.125-1.125v-2.25z" />
+            </svg>
+        </div>
+        <h2 class="mb-10 max-w-lg text-4xl font-bold leading-snug lg:text-5xl lg:leading-snug">A <span class="text-indigo-600">revolutionary</span> way to repair your devices</h2>
+        <div class="grid gap-y-12 gap-x-8 lg:grid-cols-2">
+            <div>
+                <p class="mb-6 border-l-4 border-indigo-600 pl-4 text-2xl leading-10">Launch Websites in minutes</p>
+                <p class=" text-gray-800">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam nihil reprehenderit laboriosam, exercitationem consectetur deserunt aliquam ab maiores!</p>
+            </div>
+            <div>
+                <p class="mb-6 border-l-4 border-indigo-600 pl-4 text-2xl leading-10">Never miss deadlines</p>
+                <p class=" text-gray-800">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam nihil reprehenderit laboriosam, exercitationem consectetur deserunt aliquam ab maiores!</p>
+            </div>
+            <div>
+                <p class="mb-6 border-l-4 border-indigo-600 pl-4 text-2xl leading-10">Super Intuitive</p>
+                <p class=" text-gray-800">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam nihil reprehenderit laboriosam, exercitationem consectetur deserunt aliquam ab maiores!</p>
+            </div>
+            <div>
+                <p class="mb-6 border-l-4 border-indigo-600 pl-4 text-2xl leading-10">Speedy Websites</p>
+                <p class="text-lg text-gray-800">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam nihil reprehenderit laboriosam, exercitationem consectetur deserunt aliquam ab maiores!</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- //COMPANY OVERVIEW -->
+
+
+
+
 <!-- RATING -->
 <div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
     <div class="grid gap-10 row-gap-8 lg:grid-cols-3">
@@ -556,60 +668,10 @@
 
 
 <div class="pb-24 min-h-[90rem] w-full max-w-[1340px] m-auto sm:px-12 px-4 text-white md:pt-20 lg:pt-24 sm:pt-16 xs:mt-10 ">
-    <!-- COMPANY OVERVIEW  -->
 
 
 
-    <div class="px-6 py-12 mt-5 bg-violet-700 rounded-tr-[4rem] rounded-bl-[4rem] ">
-        <div class="w-full h-fit  flex flex-col items-center ">
-            <h1 class="sm:text-2xl md:text-3xl text-lg text-center font-bold md:mb-20 mb-5 pb-2 border-b border-white border-opacity-30">‟ what make us stands out in a crowded market ”</h1>
-            <div class="flex flex-col gap-10 ">
-                <div class="flex w-full md:flex-row pb-2  flex-col items-center justify-center gap-5 border-b border-white border-opacity-30 md:border-none">
-                    <div class="sm:w-1/2 w-10/12 ">
-                        <img class="card1 m-auto w-80 bg-white rounded-lg px-10 bg-opacity-30 shadow-xl hide" src="https://cdn3d.iconscout.com/3d/premium/thumb/business-expert-5665587-4745552.png?f=webp " alt="" srcset="">
-                    </div>
-                    <div class="card2 sm:w-1/2 w-10/12 h-full flex flex-col  justify-center text-[2vw] font-thin tracking-wider hide">
-                        <h1 class=" md:text-2xl text-lg leading-5 mb-2 font-bold ">
-                            Expertise and experience in the industry
-                        </h1>
-                        <p class="xs:text-sm  text-xs ">
-                            "Welcome to our company, where our skilled and experienced technicians provide top-notch repairs and service. With our in-depth knowledge of the industry and extensive experience, we offer reliable and efficient solutions for all your repair needs."
-                        </p>
-                    </div>
-                </div>
-                <div class="flex w-full md:flex-row flex-col items-center justify-center gap-5 pb-2 border-b border-white border-opacity-30 md:border-none">
-                    <div class="sm:w-1/2 w-10/12 md:hidden ">
-                        <img class="card4 m-auto w-80 bg-white rounded-lg px-10 bg-opacity-30 shadow-xl hide" src="https://cdn3d.iconscout.com/3d/premium/thumb/product-protection-5480357-4569719.png?f=webp " alt="" srcset="">
-                    </div>
-                    <div class=" card3 sm:w-1/2 w-10/12 h-full flex flex-col justify-center text-[2vw] font-thin tracking-wider hide">
-                        <h1 class=" md:text-2xl text-lg leading-5 mb-2 font-bold ">
-                            High-quality and reliable repairs, backed by warranties
-                        </h1>
-                        <p class="xs:text-sm  text-xs ">
-                            "At our repair service company, we're committed to providing the highest quality repairs and services, using only the best materials and parts. We stand behind our work with warranties, so you can trust that your devices will be in good hands."
-                        </p>
-                    </div>
-                    <div class="sm:w-1/2 w-10/12 hidden md:block">
-                        <img class="card4 m-auto w-80 bg-white rounded-lg px-10 bg-opacity-30 shadow-xl hide" src="https://cdn3d.iconscout.com/3d/premium/thumb/product-protection-5480357-4569719.png?f=webp " alt="" srcset="">
-                    </div>
-                </div>
-                <div class="flex w-full md:flex-row flex-col items-center justify-center gap-5 ">
-                    <div class="sm:w-1/2 w-10/12 ">
-                        <img class="card1 m-auto w-80 bg-white rounded-lg px-10 bg-opacity-30 shadow-xl hide" src="https://cdn3d.iconscout.com/3d/premium/thumb/rupee-coin-5169249-4314678.png?f=webp" alt="" srcset="">
-                    </div>
-                    <div class="card2 sm:w-1/2 w-10/12 h-full flex flex-col justify-center text-[2vw] font-thin tracking-wider hide">
-                        <h1 class=" md:text-2xl text-lg leading-5 mb-2 font-bold  ">
-                            Competitive pricing and transparent pricing structures
-                        </h1>
-                        <p class="xs:text-sm  text-xs ">
-                            "At our repair service company, we believe in offering fair and competitive pricing for all our services. We provide clear and transparent pricing structures so you know exactly what you're paying for. You can count on us for high-quality repairs at a price that won't break the bank."
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- //COMPANY OVERVIEW -->
+
 
 
     <!-- PRICING -->
@@ -690,161 +752,7 @@
 
 
 
-    <!-- ABOUT COMPANY -->
-    <div class=" border border-white py-10 border-opacity-20 rounded-bl-[4rem] mt-32 bg-violet-700 
-      rounded-tr-[4rem]">
-        <h1 class="lg:text-5xl md:text-4xl sm:text-3xl text-2xl text-center font-bold mb-10">About Our Company</h1>
-        <div class="about-us h-auto w-full grid md:grid-cols-2 gap-5   pr-2 ">
-            <div class="w-full  h-full flex flex-row items-center justify-center ">
-                <div class="relative bg-white bg-opacity-30  shadow-violet-900 shadow-2xl  rounded-xl ">
-                    <img src="https://cdn3d.iconscout.com/3d/premium/thumb/business-goal-5262987-4396863.png?f=webp" class="max-h-[20rem] border-[3px] z-30 border-opacity-20 border-violet-900 h-full m-auto " alt="" srcset="">
-                    <!-- <div class="absolute w-full h-full z-0 -top-5 -right-5 border "></div> -->
-                </div>
-            </div>
-            <div class="flex flex-col px-10 justify-center items-center text-sm font-thin " style="text-shadow: 0px 1px 2px #000 ;">
-                <li class="">
-                    Dynamic Solution is a leading provider of repair and maintenance services for electronic devices in the local community. Since our founding in 2010, we have been committed to providing high-quality, reliable, and affordable repairs to our customers.
-
-                </li>
-                <li>
-                    Our team of skilled technicians has a wealth of experience in the industry, with expertise in diagnosing and repairing a wide range of electronic devices, including smartphones, laptops, tablets, and more. We use only the highest quality materials and parts in our repairs, and we stand behind our work with warranties for added peace of mind.
-                </li>
-                <li> We are committed to providing the best possible service to our customers, and we are constantly striving to improve and innovate our services to meet their evolving needs. Thank you for choosing Dynamic Solution for your repair needs.
-                </li>
-                </li>
-            </div>
-        </div>
-    </div>
-    <!-- //ABOUT COMPANY -->
-    <!-- OUR SERVICES -->
-
-
-
-    <div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
-        <div class="grid gap-8 row-gap-5 lg:grid-cols-3">
-            @foreach($serv_data as $item )
-            <div class="relative  p-px overflow-hidden transition duration-300 transform border rounded shadow-sm hover:scale-105 group hover:shadow-xl">
-
-                <div class="absolute bottom-0 left-0 w-full h-1 duration-300 origin-left transform scale-x-0 bg-deep-purple-400 group-hover:scale-x-100"></div>
-                <div class="absolute bottom-0 left-0 w-1 h-full duration-300 origin-bottom transform scale-y-0 bg-deep-purple-accent-400 group-hover:scale-y-100"></div>
-                <div class="absolute top-0 left-0 w-full h-1 duration-300 origin-right transform scale-x-0 bg-deep-purple-accent-400 group-hover:scale-x-100"></div>
-                <div class="absolute bottom-0 right-0 w-1 h-full duration-300 origin-top transform scale-y-0 bg-deep-purple-accent-400 group-hover:scale-y-100"></div>
-                <div class="relative p-5 rounded-sm ">
-                    <div class="flex flex-col mb-2 lg:items-center lg:flex-row">
-                        <div class="flex items-center justify-center w-10 h-10 mb-4 mr-2 rounded-full  lg:mb-0">
-                            <img src="{{$item->icon}}" />
-                        </div>
-                        <h6 class="font-semibold leading-5 text-black">{{$item->s_category}}</h6>
-                    </div>
-                    <div class="aspect-video mt-6 mb-8">
-                        <img src="{{$item->image}}" alt="" srcset="" class=" rounded   h-full w-full object-cover ">
-                    </div>
-                    <p class="mb-2 text-sm text-black ">
-                        {{$item->s_des}}
-                    </p>
-                    <a href="/" aria-label="" class="inline-flex items-center text-sm font-semibold transition-colors duration-200 text-purple-500 hover:text-purple-800">Learn more</a>
-                </div>
-            </div>
-            @endforeach
-        </div>
-    </div>
-
-
-
-    <div class="border border-white py-10 pb-16 border-opacity-20 rounded-bl-[4rem] mt-32 bg-violet-700 
-      rounded-tr-[4rem] px-5 flex flex-col justify-center">
-        <h1 class="text-5xl text-center font-bold mb-10 mt-5 ">Our Services</h1>
-        <div class="grid md:grid-cols-3  xs:grid-cols-2 grid-cols-1 gap-5 items-center content-center justify-center">
-            <div class="px-3 py-5 text-center group relative gap-6 hover:text-white text-violet-100 hover:bg-black hover:bg-opacity-30 transition-all bg-white bg-opacity-30 w-full aspect-square border border-transparent hover:border-white rounded-lg  flex flex-col items-center justify-center ">
-                <div class="absolute w-full group-hover:opacity-40 group-hover:scale-75 opacity-0 z-10 h-full">
-                    <img src="ima/Group 1.png" alt="" srcset="" class="w-full h-full">
-                </div>
-                <h3 class="text-3xl font-bold z-10">Appliance</h3>
-                <p class="z-10">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa mollitia repellat aperiam doloribus fugiat autem architecto voluptate minima doloremque quis.</p>
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10 p-2 mt-2 z-10 hover:bg-white hover:text-black transition-all rounded-full border  ">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
-                </svg>
-            </div>
-            <div class="px-3 py-5 text-center group relative gap-6 hover:text-white text-violet-100 hover:bg-black hover:bg-opacity-30 transition-all bg-white bg-opacity-30 w-full aspect-square border border-transparent hover:border-white rounded-lg  flex flex-col items-center justify-center ">
-                <div class="absolute w-full group-hover:opacity-40 group-hover:scale-75 opacity-0 z-10 h-full">
-                    <img src="ima/Group 1(2).png" alt="" srcset="" class="w-full h-full">
-                </div>
-                <h3 class="text-3xl font-bold z-10">Appliance</h3>
-                <p class="z-10">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa mollitia repellat aperiam doloribus fugiat autem architecto voluptate minima doloremque quis.</p>
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10 p-2 mt-2 z-10 hover:bg-white hover:text-black transition-all rounded-full border  ">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
-                </svg>
-            </div>
-            <div class="px-3 py-5 text-center group relative gap-6 hover:text-white text-violet-100 hover:bg-black hover:bg-opacity-30 transition-all bg-white bg-opacity-30 w-full aspect-square border border-transparent hover:border-white rounded-lg  flex flex-col items-center justify-center ">
-                <div class="absolute w-full group-hover:opacity-40 group-hover:scale-75 opacity-0 z-10 h-full">
-                    <img src="ima/Group 1(1).png" alt="" srcset="" class="w-full h-full">
-                </div>
-                <h3 class="text-3xl font-bold z-10">Appliance</h3>
-                <p class="z-10">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa mollitia repellat aperiam doloribus fugiat autem architecto voluptate minima doloremque quis.</p>
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10 p-2 mt-2 z-10 hover:bg-white hover:text-black transition-all rounded-full border  ">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
-                </svg>
-            </div>
-
-        </div>
-
-        <button class=" mt-20"><a href="contact" class="py-3 bg-white bg-opacity-40 hover:bg-transparent active:opacity-50  transition-all text-white  text-xl border border-transparent hover:border-white rounded-md w-56 m-auto px-8">View All</a></button>
-
-    </div>
-
-
-
-    <!-- //OUR SERVICES -->
-
     <!-- WHY CHOOSE US -->
-    <div class="w-full border border-white py-10 pb-20 border-opacity-20 rounded-bl-[4rem] mt-32 bg-violet-700 
-      rounded-tr-[4rem]  flex flex-col justify-center">
-        <h1 class="sm:text-5xl text-2xl text-center font-bold mb-10 mt-5 ">
-            Why Choose Us
-        </h1>
-        <div class="grid md:grid-cols-2  grid-cols-1">
-            <div class="flex flex-col  items-start order-2 md:order-1 px-5">
-                <div class=" py-1 sm:py-2  flex flex-row items-center  md:gap-5 gap-3 ">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="md:w-10 md:h-10  h-8 w-8 xs:h-9 xs:w-9">
-                        <path fill-rule="evenodd" d="M8.603 3.799A4.49 4.49 0 0112 2.25c1.357 0 2.573.6 3.397 1.549a4.49 4.49 0 013.498 1.307 4.491 4.491 0 011.307 3.497A4.49 4.49 0 0121.75 12a4.49 4.49 0 01-1.549 3.397 4.491 4.491 0 01-1.307 3.497 4.491 4.491 0 01-3.497 1.307A4.49 4.49 0 0112 21.75a4.49 4.49 0 01-3.397-1.549 4.49 4.49 0 01-3.498-1.306 4.491 4.491 0 01-1.307-3.498A4.49 4.49 0 012.25 12c0-1.357.6-2.573 1.549-3.397a4.49 4.49 0 011.307-3.497 4.49 4.49 0 013.497-1.307zm7.007 6.387a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z" clip-rule="evenodd" />
-                    </svg>
-                    <h1 class="font-semibold  tracking-wider relative before:absolute before:bottom-0 before:rounded-full before:bg-opacity-80 before:w-full before:h-[2px] before:bg-white text-sm xs:text-base sm:text-lg">Expertise and Experience</h1>
-                </div>
-                <div class=" py-1 sm:py-2  flex flex-row items-center  md:gap-5 gap-3 ">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="md:w-10 md:h-10  h-8 w-8 xs:h-9 xs:w-9">
-                        <path fill-rule="evenodd" d="M8.603 3.799A4.49 4.49 0 0112 2.25c1.357 0 2.573.6 3.397 1.549a4.49 4.49 0 013.498 1.307 4.491 4.491 0 011.307 3.497A4.49 4.49 0 0121.75 12a4.49 4.49 0 01-1.549 3.397 4.491 4.491 0 01-1.307 3.497 4.491 4.491 0 01-3.497 1.307A4.49 4.49 0 0112 21.75a4.49 4.49 0 01-3.397-1.549 4.49 4.49 0 01-3.498-1.306 4.491 4.491 0 01-1.307-3.498A4.49 4.49 0 012.25 12c0-1.357.6-2.573 1.549-3.397a4.49 4.49 0 011.307-3.497 4.49 4.49 0 013.497-1.307zm7.007 6.387a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z" clip-rule="evenodd" />
-                    </svg>
-                    <h1 class="font-semibold  tracking-wider relative before:absolute before:bottom-0 before:rounded-full before:bg-opacity-80 before:w-full before:h-[2px] before:bg-white text-sm xs:text-base sm:text-lg">Quality and Reliability</h1>
-                </div>
-                <div class=" py-1 sm:py-2  flex flex-row items-center  md:gap-5 gap-3 ">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="md:w-10 md:h-10  h-8 w-8 xs:h-9 xs:w-9">
-                        <path fill-rule="evenodd" d="M8.603 3.799A4.49 4.49 0 0112 2.25c1.357 0 2.573.6 3.397 1.549a4.49 4.49 0 013.498 1.307 4.491 4.491 0 011.307 3.497A4.49 4.49 0 0121.75 12a4.49 4.49 0 01-1.549 3.397 4.491 4.491 0 01-1.307 3.497 4.491 4.491 0 01-3.497 1.307A4.49 4.49 0 0112 21.75a4.49 4.49 0 01-3.397-1.549 4.49 4.49 0 01-3.498-1.306 4.491 4.491 0 01-1.307-3.498A4.49 4.49 0 012.25 12c0-1.357.6-2.573 1.549-3.397a4.49 4.49 0 011.307-3.497 4.49 4.49 0 013.497-1.307zm7.007 6.387a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z" clip-rule="evenodd" />
-                    </svg>
-                    <h1 class="font-semibold  tracking-wider relative before:absolute before:bottom-0 before:rounded-full before:bg-opacity-80 before:w-full before:h-[2px] before:bg-white text-sm xs:text-base sm:text-lg">Transparency and Fairness</h1>
-                </div>
-                <div class=" py-1 sm:py-2  flex flex-row items-center  md:gap-5 gap-3 ">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="md:w-10 md:h-10  h-8 w-8 xs:h-9 xs:w-9">
-                        <path fill-rule="evenodd" d="M8.603 3.799A4.49 4.49 0 0112 2.25c1.357 0 2.573.6 3.397 1.549a4.49 4.49 0 013.498 1.307 4.491 4.491 0 011.307 3.497A4.49 4.49 0 0121.75 12a4.49 4.49 0 01-1.549 3.397 4.491 4.491 0 01-1.307 3.497 4.491 4.491 0 01-3.497 1.307A4.49 4.49 0 0112 21.75a4.49 4.49 0 01-3.397-1.549 4.49 4.49 0 01-3.498-1.306 4.491 4.491 0 01-1.307-3.498A4.49 4.49 0 012.25 12c0-1.357.6-2.573 1.549-3.397a4.49 4.49 0 011.307-3.497 4.49 4.49 0 013.497-1.307zm7.007 6.387a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z" clip-rule="evenodd" />
-                    </svg>
-                    <h1 class="font-semibold  tracking-wider relative before:absolute before:bottom-0 before:rounded-full before:bg-opacity-80 before:w-full before:h-[2px] before:bg-white text-sm xs:text-base sm:text-lg">Convenience</h1>
-                </div>
-                <div class=" py-1 sm:py-2  flex flex-row items-center  md:gap-5 gap-3 ">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="md:w-10 md:h-10  h-8 w-8 xs:h-9 xs:w-9">
-                        <path fill-rule="evenodd" d="M8.603 3.799A4.49 4.49 0 0112 2.25c1.357 0 2.573.6 3.397 1.549a4.49 4.49 0 013.498 1.307 4.491 4.491 0 011.307 3.497A4.49 4.49 0 0121.75 12a4.49 4.49 0 01-1.549 3.397 4.491 4.491 0 01-1.307 3.497 4.491 4.491 0 01-3.497 1.307A4.49 4.49 0 0112 21.75a4.49 4.49 0 01-3.397-1.549 4.49 4.49 0 01-3.498-1.306 4.491 4.491 0 01-1.307-3.498A4.49 4.49 0 012.25 12c0-1.357.6-2.573 1.549-3.397a4.49 4.49 0 011.307-3.497 4.49 4.49 0 013.497-1.307zm7.007 6.387a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z" clip-rule="evenodd" />
-                    </svg>
-                    <h1 class="font-semibold  tracking-wider relative before:absolute before:bottom-0 before:rounded-full before:bg-opacity-80 before:w-full before:h-[2px] before:bg-white text-sm xs:text-base sm:text-lg">Customer Service</h1>
-                </div>
-            </div>
-            <div class="relative h-80 order-1 ">
-                <div class=" absolute w-40 h-64 left-[2%] z-0 border-dashed animate-pulse  rounded border-2 -top-5 mt-20 ">
-                </div>
-                <div class=" absolute w-1/2 h-72 max-w-[14rem] min-w-[12rem] right-[2%] md:left-56  z-0 border-dashed animate-pulse  rounded border-2 -top-[6.5rem]   mt-20 ">
-                </div>
-                <img src="assets/ac_technician.png " alt="" class="w-40 rounded md:mt-20 mt-9 z-10 absolute left-[5%] " srcset="">
-                <img src="assets/technician_refridge.jpg" alt="" class="w-1/2 max-w-[14rem] min-w-[12rem] min-h-[18rem] rounded absolute -top-2 right-[5%] md:left-52 " srcset="">
-            </div>
-        </div>
-    </div>
 
     <div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
         <div class="grid gap-10 lg:grid-cols-2">
@@ -888,6 +796,77 @@
         </div>
     </div>
     <!-- //WHY CHOOSE US -->
+
+    <!-- ABOUT COMPANY -->
+
+    <!-- <div class=" border border-white py-10 border-opacity-20 rounded-bl-[4rem] mt-32 bg-violet-700 
+      rounded-tr-[4rem]">
+        <h1 class="lg:text-5xl md:text-4xl sm:text-3xl text-2xl text-center font-bold mb-10">About Our Company</h1>
+        <div class="about-us h-auto w-full grid md:grid-cols-2 gap-5   pr-2 ">
+            <div class="w-full  h-full flex flex-row items-center justify-center ">
+                <div class="relative bg-white bg-opacity-30  shadow-violet-900 shadow-2xl  rounded-xl ">
+                    <img src="https://cdn3d.iconscout.com/3d/premium/thumb/business-goal-5262987-4396863.png?f=webp" class="max-h-[20rem] border-[3px] z-30 border-opacity-20 border-violet-900 h-full m-auto " alt="" srcset="">
+                </div>
+            </div>
+            <div class="flex flex-col px-10 justify-center items-center text-sm font-thin " style="text-shadow: 0px 1px 2px #000 ;">
+                <li class="">
+                    Dynamic Solution is a leading provider of repair and maintenance services for electronic devices in the local community. Since our founding in 2010, we have been committed to providing high-quality, reliable, and affordable repairs to our customers.
+
+                </li>
+                <li>
+                    Our team of skilled technicians has a wealth of experience in the industry, with expertise in diagnosing and repairing a wide range of electronic devices, including smartphones, laptops, tablets, and more. We use only the highest quality materials and parts in our repairs, and we stand behind our work with warranties for added peace of mind.
+                </li>
+                <li> We are committed to providing the best possible service to our customers, and we are constantly striving to improve and innovate our services to meet their evolving needs. Thank you for choosing Dynamic Solution for your repair needs.
+                </li>
+                </li>
+            </div>
+        </div>
+    </div> -->
+
+
+
+    <div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+        <div class="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
+            <div>
+                <p class="inline-block px-3 py-px mb-4 text-xs font-semibold tracking-wider text-teal-900 uppercase rounded-full bg-teal-accent-400">
+                    About Company
+                </p>
+            </div>
+            <h2 class="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl md:mx-auto">
+                <span class="relative inline-block">
+                    <svg viewBox="0 0 52 24" fill="currentColor" class="absolute top-0 left-0 z-0 hidden w-32 -mt-8 -ml-20 text-blue-gray-100 lg:w-32 lg:-ml-28 lg:-mt-10 sm:block">
+                        <defs>
+                            <pattern id="679d5905-e08c-4b91-a66c-84aefbb9d2f5" x="0" y="0" width=".135" height=".30">
+                                <circle cx="1" cy="1" r=".7"></circle>
+                            </pattern>
+                        </defs>
+                        <rect fill="url(#679d5905-e08c-4b91-a66c-84aefbb9d2f5)" width="52" height="24"></rect>
+                    </svg>
+                    <span class="relative">The</span>
+                </span>
+                Lorem ipsum dolor sit amet consectetur.
+            </h2>
+            <p class="text-base text-gray-700 md:text-lg">
+                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque rem aperiam, eaque ipsa quae.
+            </p>
+        </div>
+        <div class="mx-auto lg:max-w-2xl">
+            <div class="relative w-full transition-shadow duration-300 hover:shadow-xl">
+                <img class="object-cover w-full h-56 rounded shadow-lg sm:h-64 md:h-80 lg:h-96" src="https://images.pexels.com/photos/927022/pexels-photo-927022.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=3&amp;h=750&amp;w=1260" alt="" />
+                <a href="/" aria-label="Play Video" class="absolute inset-0 flex items-center justify-center w-full h-full transition-colors duration-300 bg-gray-900 bg-opacity-50 group hover:bg-opacity-25">
+                    <div class="flex items-center justify-center w-16 h-16 transition duration-300 transform bg-gray-100 rounded-full shadow-2xl group-hover:scale-110">
+                        <svg class="w-10 text-gray-900" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M16.53,11.152l-8-5C8.221,5.958,7.833,5.949,7.515,6.125C7.197,6.302,7,6.636,7,7v10 c0,0.364,0.197,0.698,0.515,0.875C7.667,17.958,7.833,18,8,18c0.184,0,0.368-0.051,0.53-0.152l8-5C16.822,12.665,17,12.345,17,12 S16.822,11.335,16.53,11.152z"></path>
+                        </svg>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- //ABOUT COMPANY -->
 </div>
 <script>
     const select = document.querySelector('.custom-select select');
@@ -977,7 +956,7 @@
                 });
             } else {
                 document.getElementById("hfindex").value = t.selectedIndex;
-                const form=document.querySelector('#proceed_form');
+                const form = document.querySelector('#proceed_form');
                 form.submit();
             }
             console.log(selectedText);
