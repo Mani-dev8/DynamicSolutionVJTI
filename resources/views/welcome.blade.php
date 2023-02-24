@@ -243,28 +243,23 @@
 </head>
 
 
-<body  class="h-[100vh] w-[100vw] bg-white overflow-hidden relative font-pop ">
+<body class="h-[100vh] w-[100vw] bg-white overflow-hidden relative font-pop ">
     <section class="dar  w-full h-full absolute  overflow-y-scroll">
         <div class="fixed top-0 z-20 bg-white w-full">
-            <div id="header" class="px-4 py-5 mx-auto  sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
+            <div id="header" class="px-4 py-4 mx-auto h-[5rem] sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
                 <div class="relative flex items-center justify-between">
                     <a href="/" aria-label="Company" title="Company" class="inline-flex items-center">
-                        <svg class="w-8 text-deep-purple-accent-400" viewBox="0 0 24 24" stroke-linejoin="round" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" stroke="currentColor" fill="none">
-                            <rect x="3" y="1" width="7" height="12"></rect>
-                            <rect x="3" y="17" width="7" height="6"></rect>
-                            <rect x="14" y="1" width="7" height="6"></rect>
-                            <rect x="14" y="11" width="7" height="12"></rect>
-                        </svg>
-                        <span class="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">D Solution</span>
+                        <img src="login-images\dynamic_solution_logo.svg" alt="" srcset="" class='w-10 h-10 rounded shadow-md'>
+                        <span class="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">D.Solution</span>
                     </a>
                     <ul class=" items-center hidden space-x-8 lg:flex">
-                        <li><a href="/" aria-label="Our product" title="Our product" class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400">Product</a></li>
-                        <li><a href="/" aria-label="Our product" title="Our product" class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400">Features</a></li>
-                        <li><a href="/" aria-label="Product pricing" title="Product pricing" class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400">Pricing</a></li>
-                        <li><a href="/" aria-label="About us" title="About us" class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400">About us</a></li>
+                        <li><a href="/" aria-label="Our product" title="Our product" class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400">Home</a></li>
+                        <li><a href="/features" aria-label="Our product" title="Our product" class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400">Features</a></li>
+                        <li><a href="/contact" aria-label="Product pricing" title="Product pricing" class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400">Contact</a></li>
+                        <li><a href="/aboutus" aria-label="About us" title="About us" class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400">About us</a></li>
                         <li>
-                            <a href="/" class="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-purple-600 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none" aria-label="Sign up" title="Sign up">
-                                Sign up
+                            <a href="/login" class="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-purple-600 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none" aria-label="Sign In" title="Sign In">
+                                Sign In
                             </a>
                         </li>
                     </ul>
@@ -344,18 +339,18 @@
 
             @yield('content')
         </div>
-        <!-- <footer id="footer_desk" class="footer  dark:bg-violet-900 relative w-full pt-2">
-            <input type="checkbox" name="" id="" class="absolute right-0 peer/foot w-full opacity-0 z-30 h-10 cursor-pointer">
-            <span class="text-black absolute right-[35%] peer-checked/foot:rotate-90 font-semibold dark:text-white">></span>
-            <h1 class="text-black w-fit  m-auto dark:text-white">more info </h1>
-            <div style="margin-top: -50px;" class="container md:pl-6 lg:pl-12    bg-opacity-10 dark:bg-opacity-10 peer-checked/foot:h-fit h-0 overflow-hidden">
+        <footer id="footer_desk" class="footer  dark:bg-purple-900 relative w-full -mt-8">
+            <!-- <input type="checkbox" name="" id="" class="absolute right-0 peer/foot w-full opacity-0 z-30 h-10 cursor-pointer">
+            <span class="text-black absolute  peer-checked/foot:rotate-90 font-semibold dark:text-white">></span>
+            <h1 class="text-black w-fit  m-auto dark:text-white">more info </h1> -->
+            <div class="container md:pl-6 lg:pl-12 dark:bg-opacity-10  h-fit overflow-hidden transition-all">
                 <div class="row">
                     <div class="footer-col">
                         <h4 class="text-sm sm:text-base md:text-lg dark:text-white text-black">company</h4>
                         <ul>
                             <li><a href="#" class="text-xs sm:text-sm md:text-base dark:text-gray-400 dark:hover:text-white text-gray-500 hover:text-black">about us</a></li>
                             <li><a href="#" class="text-xs sm:text-sm md:text-base dark:text-gray-400 dark:hover:text-white text-gray-500 hover:text-black">our services</a></li>
-                            <li><a href="#" class="text-xs sm:text-sm md:text-base dark:text-gray-400 dark:hover:text-white text-gray-500 hover:text-black">privacy policy</a></li>
+                            <li><a href="#" class="text-xs sm:text-sm md:text-base dark:text-gray-400 dark:hover:text-white text-gray-500 hover:text-black">contact us</a></li>
                             <li><a href="#" class="text-xs sm:text-sm md:text-base dark:text-gray-400 dark:hover:text-white text-gray-500 hover:text-black">affiliate program</a></li>
                         </ul>
                     </div>
@@ -370,30 +365,29 @@
                         </ul>
                     </div>
                     <div class="footer-col">
-                        <h4 class="text-sm sm:text-base md:text-lg dark:text-white text-black">online shop</h4>
+                        <h4 class="text-sm sm:text-base md:text-lg dark:text-white text-black">More</h4>
                         <ul>
-                            <li><a href="#" class="text-xs sm:text-sm md:text-base dark:text-gray-400 dark:hover:text-white text-gray-500 hover:text-black">watch</a></li>
-                            <li><a href="#" class="text-xs sm:text-sm md:text-base dark:text-gray-400 dark:hover:text-white text-gray-500 hover:text-black">bag</a></li>
-                            <li><a href="#" class="text-xs sm:text-sm md:text-base dark:text-gray-400 dark:hover:text-white text-gray-500 hover:text-black">shoes</a></li>
-                            <li><a href="#" class="text-xs sm:text-sm md:text-base dark:text-gray-400 dark:hover:text-white text-gray-500 hover:text-black">dress</a></li>
+                            <li><a href="#" class="text-xs sm:text-sm md:text-base dark:text-gray-400 dark:hover:text-white text-gray-500 hover:text-black">privacy policy</a></li>
+                            <li><a href="#" class="text-xs sm:text-sm md:text-base dark:text-gray-400 dark:hover:text-white text-gray-500 hover:text-black">blog</a></li>
+
                         </ul>
                     </div>
                     <div class="footer-col">
-                        <h4 class="text-sm sm:text-base md:text-lg dark:text-white text-black">follow us</h4>
+                        <h4 class="text-sm  sm:text-base md:text-lg dark:text-white text-black">follow us</h4>
 
                         <div class="social-links">
                             <li>
                                 <div class="flex flex-row group my-1  items-center">
 
                                     <a href="#" class=" social text-xs sm:text-sm md:text-base"><i class="fab fa-facebook-f"></i></a>
-                                    <a href="#" class="text-xs sm:text-sm md:text-base dark:text-gray-400 dark:group-hover:text-white text-gray-500 group-hover:text-black font-thin group-hover:pl-2  transition-all ease-linear group-hover:underline">Facebook</a>
+                                    <a href="#" class="text-xs sm:text-sm md:text-base dark:text-gray-400 dark:group-hover:text-white text-gray-400 group-hover:text-black font-base group-hover:pl-2  transition-all ease-linear group-hover:underline">Facebook</a>
                                 </div>
                             </li>
                             <li>
                                 <div class="flex flex-row group my-1  items-center">
 
                                     <a href="#" class="social text-xs sm:text-sm md:text-base"><i class="fab fa-twitter"></i></a>
-                                    <a href="#" class="text-xs sm:text-sm md:text-base dark:text-gray-400 dark:group-hover:text-white text-gray-500 group-hover:text-black font-thin group-hover:pl-2  transition-all ease-linear group-hover:underline">Tweeter</a>
+                                    <a href="#" class="text-xs sm:text-sm md:text-base dark:text-gray-400 dark:group-hover:text-white text-gray-400 group-hover:text-black font-base group-hover:pl-2  transition-all ease-linear group-hover:underline">Tweeter</a>
                                 </div>
                             </li>
 
@@ -401,14 +395,14 @@
                                 <div class="flex flex-row group my-1  items-center">
 
                                     <a href="#" class="social text-xs sm:text-sm md:text-base"><i class="fab fa-instagram"></i></a>
-                                    <a href="#" class="text-xs sm:text-sm md:text-base dark:text-gray-400 dark:group-hover:text-white text-gray-500 group-hover:text-black font-thin group-hover:pl-2  transition-all ease-linear group-hover:underline">Instagram</a>
+                                    <a href="#" class="text-xs sm:text-sm md:text-base dark:text-gray-400 dark:group-hover:text-white text-gray-400 group-hover:text-black font-base group-hover:pl-2  transition-all ease-linear group-hover:underline">Instagram</a>
                                 </div>
                             </li>
                             <li>
                                 <div class="flex flex-row group my-1  items-center ">
 
                                     <a href="#" class="social text-xs sm:text-sm md:text-base"><i class="fab fa-linkedin-in"></i></a>
-                                    <a href="#" class="text-xs sm:text-sm md:text-base dark:text-gray-400 dark:group-hover:text-white text-gray-500 group-hover:text-black font-thin group-hover:pl-2  transition-all ease-linear group-hover:underline">Linkedin</a>
+                                    <a href="#" class="text-xs sm:text-sm md:text-base dark:text-gray-400 dark:group-hover:text-white text-gray-400 group-hover:text-black font-base group-hover:pl-2  transition-all ease-linear group-hover:underline">Linkedin</a>
                                 </div>
                             </li>
                         </div>
@@ -416,10 +410,10 @@
                 </div>
             </div>
 
-        </footer> -->
+        </footer>
 
-        <!-- 
-        <div class="relative mt-16 bg-violet-800 text-gray-200">
+
+        <!-- <div class="relative mt-16 bg-violet-800 text-gray-200">
             <svg class="absolute top-0 w-full h-6 -mt-5 sm:-mt-10 sm:h-16 text-violet-800" preserveAspectRatio="none" viewBox="0 0 1440 54">
                 <path fill="currentColor" d="M0 22L120 16.7C240 11 480 1.00001 720 0.700012C960 1.00001 1200 11 1320 16.7L1440 22V54H1320C1200 54 960 54 720 54C480 54 240 54 120 54H0V22Z"></path>
             </svg>
@@ -550,75 +544,7 @@
                 </div>
             </div>
         </div> -->
-        <!-- <footer>
-            <div class="footer-2 bg-violet-800 pt-6 md:pt-12">
-                <div class="container px-4 mx-auto">
 
-                    <div class="md:flex md:flex-wrap md:-mx-4 py-6 md:pb-12">
-
-                        <div class="footer-info lg:w-1/3 md:px-4">
-                            <h4 class="text-white text-2xl mb-4 tracking-tighter">At Dynamic Solution, we are committed to providing high-quality, reliable, and affordable repair services to our customers. Here are some quick links to help you navigate our website:</p>
-                                <div class="mt-4">
-                                    <button class="bg-facebook py-2 px-4 text-white rounded mt-2 transition-colors duration-300">
-                                        <span class="fa fa-facebook-f mr-2"></span> Follow
-                                    </button>
-                                    <button class="bg-twitter py-2 px-4 text-white rounded ml-2 mt-2 transition-colors duration-300">
-                                        <span class="fab fa-twitter mr-2"></span> Follow @freeweb19
-                                    </button>
-                                </div>
-                        </div>
-
-                        <div class="md:w-2/3 lg:w-1/3 md:px-4 xl:pl-16 mt-12 lg:mt-0">
-                            <div class="sm:flex">
-                                <div class="sm:flex-1">
-                                    <h6 class="text-base font-medium text-white uppercase mb-2">About</h6>
-                                    <div>
-                                        <a href="#" class="text-gray-400 py-1 block hover:underline">Company</a>
-                                        <a href="#" class="text-gray-400 py-1 block hover:underline">Culture</a>
-                                        <a href="#" class="text-gray-400 py-1 block hover:underline">Team</a>
-                                        <a href="#" class="text-gray-400 py-1 block hover:underline">Careers</a>
-                                    </div>
-                                </div>
-                                <div class="sm:flex-1 mt-4 sm:mt-0">
-                                    <h6 class="text-base font-medium text-white uppercase mb-2">What we offer</h6>
-                                    <div>
-                                        <a href="#" class="text-gray-400 py-1 block hover:underline">Blocks</a>
-                                        <a href="#" class="text-gray-400 py-1 block hover:underline">Resources</a>
-                                        <a href="#" class="text-gray-400 py-1 block hover:underline">Tools</a>
-                                        <a href="#" class="text-gray-400 py-1 block hover:underline">Tutorials</a>
-                                        <a href="#" class="text-gray-400 py-1 block hover:underline">Freebies</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="md:w-1/3 md:px-4 md:text-center mt-12 lg:mt-0">
-                            <h5 class="text-lg text-white font-medium mb-4">Explore our site</h5>
-                            <button class="bg-indigo-600 text-white hover:bg-indigo-700 rounded py-2 px-6 md:px-12 transition-colors duration-300">Explore</button>
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <div class="border-t border-solid border-gray-900 mt-4 py-4">
-                    <div class="container px-4 mx-auto">
-
-                        <div class="md:flex md:-mx-4 md:items-center">
-                            <div class="md:flex-1 md:px-4 text-center md:text-left">
-                                <p class="text-white">&copy; <strong>FWR</strong></p>
-                            </div>
-                            <div class="md:flex-1 md:px-4 text-center md:text-right">
-                                <a href="#" class="py-2 px-4 text-white inline-block hover:underline">Terms of Service</a>
-                                <a href="#" class="py-2 px-4 text-white inline-block hover:underline">Privacy Policy</a>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-            </div>
-        </footer> -->
     </section>
     <div id="Main" class="xl:rounded-r absolute z-50  mt-  -translate-x-full left-0 lg:hidden  transform  xl:translate-x-0  ease-in-out transition duration-500 flex justify-start items-start h-full  w-full sm:w-64 bg-gray-900 flex-col">
         <div class="hidden xl:flex justify-start p-6 items-center space-x-3">
@@ -851,11 +777,10 @@
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <script>
-        if (window.location.href.includes("account")) {
-            
+        if (window.location.href.includes("account") || window.location.href.includes("login") || window.location.href.includes("signup")) {
             document.getElementById('Main').style.display = "none";
             document.getElementById('header').style.display = "none";
-
+            document.getElementById('footer_desk').style.display = "none";
         }
         const swiper = new Swiper(".mySwiper", {
             slidesPerView: "auto",

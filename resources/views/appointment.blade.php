@@ -153,8 +153,8 @@
 
 <div class="flex flex-col gap-3 px-5 sm:px-20 py-10 mt-20" style="background: whitesmoke;">
     <div id="map" class="min-h-[400px] sm:min-h-[475px]"></div>
-    <div class="flex gap-5 flex-col md:flex-row">
-        <div class="flex gap-8 w-[60%]">
+    <div class="flex gap-5 flex-row">
+        <div class="flex gap-8 w-[70%]">
             <img src="appointment-images\map.png" class="h-12 w-12">
             <div class="flex flex-col justify-center items-start" id="loc-info">
                 <p class="text block">Select any Point for Booking Appointment</p>
@@ -165,9 +165,9 @@
                 </div>
             </div>
         </div>
-        <div class="w-[40%] flex justify-end items-end px-5">
+        <div class="w-[30%] flex justify-end items-end px-5">
             <div class="overlay hidden"></div>
-            <button onclick="dataPass(this)" class="btn hidden btn-open cursor-pointer font-bold text-white text-xl bg-indigo-900 h-10 w-24 rounded-lg hover:bg-indigo-800" id="openModalBtn">NEXT</button>
+            <button onclick="dataPass(this)" class="btn hidden btn-open cursor-pointer font-bold text-white text-xl bg-violet-600 shadow-md shadow-violet-300 h-10 w-24 rounded-lg hover:bg-violet-800 hover:shadow-none" id="openModalBtn">NEXT</button>
         </div>
     </div>
 </div>
@@ -189,41 +189,40 @@
                     <p class="font-semibold text-lg text-black ">Appointment Timings</p>
                 </div>
             </div>
-
-            <div class="flex">
-                <h2 id="t_name_model" class="flex gap-2 w-[60%] px-5 py-3 text-xl font-bold">Suraj <p class="text-lg font-semibold mt-[1px]">( Electrician )</p>
+            <div class~="flex">
+                <h2 id="t_name_model" class="flex gap-2 w-[60%] px-5 py-3 text-lg sm:text-xl font-bold">Suraj <p class="text-lg font-semibold mt-[1px]">( Electrician )</p>
                 </h2>
                 <div class="w-[40%] flex justify-center items-center gap-3">
                     <i class="fa-sharp fa-solid fa-people-arrows text-xl text-slate-700"></i>
-                    <p id="t_dis_model" class="font-semibold text-green-500">5 km away</p>
+                    <p id="t_dis_model" class="font-semibold text-green-500 text-sm sm:text-base">5 km away</p>
                 </div>
             </div>
 
-            <div class="inputGroup">
+            <div class="inputGroup w-full">
                 <input id="option1" name="rapid_radio" type="checkbox" value="0" onchange="validateCheckbox()" />
-                <label for="option1" class="font-semibold text-gray-500 rounded-md">Home service available within 2 Hours</label>
+                <label for="option1" class="font-semibold text-gray-500 rounded-md text-sm sm:text-base">Home service available within 2 Hours</label>
             </div>
 
-            <p class="text-lg font-semibold text-indigo-900">OR SELECT TIMINGS</p>
+            <p class="text-base sm:text-lg font-semibold text-indigo-900">OR SELECT TIMINGS</p>
 
             <div class="flex flex-row gap-2 pt-2">
                 <div class="flex flex-col w-[50%]">
-                    <label for="date" class="text-md font-semibold py-1">Select a date:</label>
-                    <input type="date" id="date" name='date_selected' min="" max="" onchange="populateTimeslots()" class="border-2 border-indigo-900 rounded-md text-gray-500 font-semibold">
+                    <label for="date" class="text-sm sm:text-base font-semibold py-1">Select a date:</label>
+                    <input type="date" id="date" name='date_selected' min="" max="" onchange="populateTimeslots()" class="border-2 h-10 px-2 border-zinc-300 rounded-md text-gray-500 font-semibold">
                 </div>
 
                 <div class="flex flex-col w-[50%]">
-                    <label for="timeslot" class="text-md font-semibold py-1">Select a time slot:</label>
-                    <select id="time" class="border-2 border-indigo-900 rounded-md text-gray-500 font-semibold">
+                    <label for="timeslot" class="text-sm sm:text-base font-semibold py-1">Select a time slot:</label>
+                    <select id="time" class="border-2 h-10 px-2 border-zinc-300 rounded-md text-gray-500 font-semibold">
                         <option value="" disabled selected hidden>Select A Date First</option>
                     </select>
                 </div>
             </div>
 
-            <p class="text-md font-semibold text-sky-500 py-4">After sucessfull payment our agent will contact you and visit your Home for Service.</p>
+            <p class="text-sm sm:text-base font-semibold text-violet-500 py-4">After sucessfull payment our agent will contact you and visit your Home for Service.</p>
 
             <!-- <div class="pt-5 pb-10 w-full h-12"> -->
-            <input id="submit" type="submit" value='proceed to checkout' onclick="processData(this)" class=" cursor-pointer  w-full rounded-md text-white text-lg font-semibold bg-indigo-900 hover:bg-indigo-800 h-12">
+            <input id="submit" type="submit" value='proceed to checkout' onclick="processData(this)" class=" cursor-pointer  w-full rounded-md text-white sm:text-lg font-semibold bg-purple-600 shadow-md shadow-purple-300 hover:bg-purple-800 h-12 hover:shadow-none">
             <!-- </div> -->
         </form>
     </div>

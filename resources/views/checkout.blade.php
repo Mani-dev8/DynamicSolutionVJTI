@@ -223,7 +223,9 @@
                         body: formData
                     })
                     .then(response => response.text())
-                    .then(data => console.log("data==="+data))
+                    .then(data => {if (data) {
+                        window.location.href='home'
+                    }})
                     .catch(error => console.error(error));
                 // const succ= document.querySelector('.succ');
                 // succ.innerHTML = ` <div style="" class="h-40 w-40 bg-green-500 rounded-full ">successful</div> `;
