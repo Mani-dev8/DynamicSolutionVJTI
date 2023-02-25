@@ -406,8 +406,8 @@
         form.setAttribute("method", "GET");
         form.setAttribute("action", oauth2Endpoint);
         var params = {
-            client_id: "1010475604525-mhk93fqc3n1lugu1hg6gh2qcn65t79b2.apps.googleusercontent.com",
-            redirect_uri: "http://127.0.0.1:8000/home",
+            client_id: "1010475604525-0npgbh9t2n2ouv4hq5tleh9jl2lfo3rf.apps.googleusercontent.com",
+            redirect_uri: "https://b0fa-2409-4040-d8a-5af0-c4bd-7dc2-4556-90bf.in.ngrok.io/home",
             response_type: "token",
             scope: "https://www.googleapis.com/auth/userinfo.profile email openid",
             include_granted_scopes: "true",
