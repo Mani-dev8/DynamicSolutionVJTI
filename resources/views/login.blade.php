@@ -334,13 +334,13 @@
         }
     }
 </style>
-<div class="h-[100vh] sm:px-10 sm:py-12 px-3 py-4 bg-violet-900 bg-opacity-20">
-    <div class=" rounded-xl h-[700px] overflow-hidden cont flex flex-col md:flex-row shadow-lg ">
+<div class="h-[100vh] sm:px-10  bg-violet-900 bg-opacity-20 flex  flex-row items-center items-enter">
+    <div class=" rounded-xl h-[700px] w-[90%] m-auto overflow-hidden cont flex flex-col items-center justify-center md:flex-row shadow-lg ">
         <div class="left-side h-full w-full md:w-[65%] " style="background-color: whitesmoke;">
             <!-- <div class="px-10 w-full h-[19%]">
             <img src="login-images\WhatsApp Image 2023-02-17 at 21.25.10.jpeg">
         </div>      -->
-            <div class="h-[100%] flex flex-col justify-center gap-2 items-center ">
+            <div class="h-[100%]  flex flex-col justify-center gap-2 items-center ">
                 <div class="flex flex-col justify-center items-center gap-1">
                     <h1 class="text-indigo-500 text-3xl font-bold tracking-wide">Sign in to Account</h1>
                     <img src="login-images\delete (1).png" class="text-center h-9 w-14">
@@ -358,23 +358,23 @@
                 <form method="post" id="login_form" class="w-full">
                     <div class="flex justify-center items-center flex-col gap-1 w-full ">
                         @csrf
-                        <input id="email" required='' name='email' type='text'>
-                        <label id="lblemail" alt='Email' placeholder='Type Email'></label>
+                        <input id="email" required='' name='email' type='text' class="min-w-[270px]">
+                        <label id="lblemail" alt='Email' placeholder='Email' class=""></label>
 
-                        <input id="pass" required='' name='password' type='password'>
-                        <label id="lblpass" alt='Password' placeholder='Type Password' class="mt-[-20px]"></label>
+                        <input id="pass" required='' name='password' type='password' class="min-w-[270px]">
+                        <label id="lblpass" alt='Password' placeholder='Password' class="mt-[-20px]"></label>
                         <div class="forgot h-10 flex justify-end mt-[-25px] w-[40%] md:w-[33%]">
-                            <a href="#" class="text text-md sm:text-lg font-bold text-black cursor-pointer hover:text-gray-600">Forgot Password ?</a>
+                            <a href="#" class="text text-sm  sm:text-lg font-semibold text-zinc-500 cursor-pointer hover:text-gray-900">Forgot Password ?</a>
                         </div>
                         <input type="submit" id="login_btn" value="Sign In" class="h-11 w-36 bg-purple-500 shadow-md hover:shadow-none shadow-purple-300 text-white text-xl font-semibold rounded-3xl mt-1 cursor-pointer hover:bg-purple-700  ">
                     </div>
                 </form>
 
-                <div class="flex justify-center items-end gap-5 h-[80px] w-full">
+                <div class="flex justify-center items-end gap-5 h-[80px] w-full ">
                     <div class="flex justify-center items-center gap-5 h-[40px] w-full">
-                        <a href="#" class="sm:text-lg   font-semibold text-gray-500">Privacy Policy</a>
+                        <a href="#" class="sm:text-lg text-sm  font-semibold text-gray-500">Privacy Policy</a>
                         <i class="fa-solid fa-circle text-[8px] text-gray-500"></i>
-                        <a href="#" class="sm:text-lg   font-semibold text-gray-500">Terms & Conditions</a>
+                        <a href="#" class="sm:text-lg text-sm  font-semibold text-gray-500">Terms & Conditions</a>
                     </div>
                 </div>
             </div>
@@ -384,12 +384,13 @@
                 <!-- <h1 class="text-white text-3xl font-bold">HELLO USER</h1> -->
                 <img src="login-images\Security On.gif" class="h-[370px] w-[370px]">
                 <p class="text-center text-lg font-semibold text-gray-300">if you are new to us, please create your profile by clicking on signup button.</p>
-                <a href="#" class="flex justify-center items-center h-11 w-32 rounded-lg bg-white text-violet-900 text-xl font-bold text-center hover:bg-violet-900 hover:text-white" style="border: solid 1px whitesmoke">Sign up</a>
+                <a href="signup" class="flex justify-center items-center h-11 w-32 rounded-lg bg-white text-violet-900 text-xl font-bold text-center hover:bg-violet-900 hover:text-white" style="border: solid 1px whitesmoke">Sign up</a>
                 <i class="fa-solid fa-dash"></i>
             </div>
         </div>
     </div>
 </div>
+<script src="https://apis.google.com/js/api.js"></script>
 <script>
     function onSignIn(googleUser) {
         var profile = googleUser.getBasicProfile();
@@ -405,12 +406,13 @@
         form.setAttribute("method", "GET");
         form.setAttribute("action", oauth2Endpoint);
         var params = {
-            client_id: "1010475604525-1u8ovatdt43pgq3mdn60mdmukb0bujis.apps.googleusercontent.com",
-            redirect_uri: "http://127.0.0.1:5500/contact.html",
+            client_id: "1010475604525-mhk93fqc3n1lugu1hg6gh2qcn65t79b2.apps.googleusercontent.com",
+            redirect_uri: "http://127.0.0.1:8000/home",
             response_type: "token",
-            scope: "https://www.googleapis.com/auth/userinfo.profile",
+            scope: "https://www.googleapis.com/auth/userinfo.profile email openid",
             include_granted_scopes: "true",
             state: "pass-through value",
+
         };
 
         for (var p in params) {
@@ -466,7 +468,7 @@
                         error_msg.classList.add("error", "text-red-500", "m-auto", "underline", "w-fit", "mt-4")
                         login_btn.appendChild(error_msg)
                     } else {
-                        window.location.href="home"
+                        window.location.href = "home"
                     }
                 } else {
                     console.log("something went wrong")
