@@ -152,7 +152,7 @@
 
 
 <div class="flex flex-col gap-3 px-5 sm:px-20 py-10 mt-20" style="background: whitesmoke;">
-    @if(session('user'))
+    
     <div id="map" class="min-h-[400px] sm:min-h-[475px]"></div>
     <div class="flex gap-5 flex-row">
         <div class="flex gap-8 w-[70%]">
@@ -171,9 +171,7 @@
             <button onclick="dataPass(this)" class="btn hidden btn-open cursor-pointer font-bold text-white text-xl bg-violet-600 shadow-md shadow-violet-300 h-10 w-24 rounded-lg hover:bg-violet-800 hover:shadow-none" id="openModalBtn">NEXT</button>
         </div>
     </div>
-    @else
-    {{return redirect('home')}}
-    @endif
+    
 </div>
 
 <!-- <button id="openModalBtn">Open Modal</button> -->

@@ -1,40 +1,40 @@
 @extends('welcome')
 @section('content')
-<style>
-    .toast-center {
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-    }
+    <style>
+        .toast-center {
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
 
-    .toast-error {
-        background-color: red;
-    }
+        .toast-error {
+            background-color: red;
+        }
 
-    .toast-success {
-        background-color: #4cbb17;
-        font-weight: 500;
-        height: 80px;
-        width: 200px;
-    }
+        .toast-success {
+            background-color: #4cbb17;
+            font-weight: 500;
+            height: 80px;
+            width: 200px;
+        }
 
-    .inputs input {
-        font-weight: 500;
-        width: 300px;
-        border-radius: 6px;
-        border: solid 1px ghostwhite;
-        background-color: whitesmoke;
-        height: 2.5rem;
-        color: #333;
-        font-size: 15px;
-        outline: none;
-    }
+        .inputs input {
+            font-weight: 500;
+            width: 300px;
+            border-radius: 6px;
+            border: solid 1px ghostwhite;
+            background-color: whitesmoke;
+            height: 2.5rem;
+            color: #333;
+            font-size: 15px;
+            outline: none;
+        }
 
-    /* .relative i{
+        /* .relative i{
             color: purple;
             font-size: 1rem;
         } */
-</style>
+    </style>
 
 
 <div class=" bg-purple-200 bg-opacity-70 h-[100vh] py-5 flex flex-row items-end justify-center">
@@ -112,8 +112,8 @@
         form.setAttribute("method", "GET");
         form.setAttribute("action", oauth2Endpoint);
         var params = {
-            client_id: "1010475604525-0npgbh9t2n2ouv4hq5tleh9jl2lfo3rf.apps.googleusercontent.com",
-            redirect_uri: "https://b0fa-2409-4040-d8a-5af0-c4bd-7dc2-4556-90bf.in.ngrok.io/home",
+            client_id: "1010475604525-mhk93fqc3n1lugu1hg6gh2qcn65t79b2.apps.googleusercontent.com",
+            redirect_uri: "http://127.0.0.1:8000/home",
             response_type: "token",
             scope: "https://www.googleapis.com/auth/userinfo.profile email openid",
             include_granted_scopes: "true",
