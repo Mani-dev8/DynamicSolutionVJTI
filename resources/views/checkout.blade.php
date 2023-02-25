@@ -33,11 +33,11 @@
 <div class="grid sm:px-10 lg:grid-cols-2 lg:px-20 xl:px-32 sm:gap-5">
     <form action="order" id="orderForm" method="post">
         @csrf
-        <input type="text" name="t_name" value="{{session('technician')}}">
-        <input type="text" name="service_date" value="{{session('date_selected')}}">
+        <input type="hidden" name="t_name" value="{{session('technician')}}">
+        <input type="hidden" name="service_date" value="{{session('date_selected')}}">
 
-        <input type="text" name="rapid_service" value="{{session('rapid_slot')}}">
-        <input type="text" name="time_slot" value="{{session('slot')}}">
+        <input type="hidden" name="rapid_service" value="{{session('rapid_slot')}}">
+        <input type="hidden" name="time_slot" value="{{session('slot')}}">
 
         <div class="px-4 pt-8">
             <p class="text-xl font-medium">Payment Details</p>
@@ -224,6 +224,7 @@
                     })
                     .then(response => response.text())
                     .then(data => {if (data) {
+                        console.log(data)
                         window.location.href='home'
                     }})
                     .catch(error => console.error(error));

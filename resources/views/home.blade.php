@@ -19,6 +19,8 @@
         background-color: red;
     }
 
+
+
     .toast-success {
         background-color: #4cbb17;
         font-weight: 500;
@@ -111,13 +113,12 @@
 
     .custom-select select {
         width: 100%;
-        height: 100%;
-        padding: 10px;
+        height: 120%;
+        padding: 12px 10px;
         border: none;
         background-color: #f5f5f5;
         color: #333;
         font-size: 16px;
-        font-weight: bold;
         appearance: none;
         -webkit-appearance: none;
         -moz-appearance: none;
@@ -137,14 +138,6 @@
         border-radius: 5px;
     }
 
-    .arrow::before {
-        content: "\25BC";
-        position: absolute;
-        top: 50%;
-        right: 50%;
-        transform: translate(50%, -50%);
-    }
-
     .custom-select.open .arrow {
         transform: rotate(180deg);
     }
@@ -156,8 +149,35 @@
     .custom-select select:hover {
         cursor: pointer;
     }
+
+    .arrow {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 30px;
+        height: 100%;
+        background-color: #f5f5f5;
+        color: #333;
+        pointer-events: none;
+        transition: transform 0.3s ease;
+        border-radius: 5px;
+    }
+
+
+
+    /* .arrow::before {
+        content: "\f13a";
+        position: absolute;
+        top: 50%;
+        right: 50%;
+        transform: translate(50%, -50%);
+    } */
+
+    .custom-select.open .arrow {
+        transform: rotate(180deg);
+    }
 </style>
-<div class="w-full h-fit relative mt-10">
+<div class="w-full h-fit relative mt-10 ">
     <!-- <div class=" w-[100vw] h-fit  bg-gradient-to-b from-violet-200  overflow-visible shadow-2xl shadow-violet-100">
         <div class=" sm:pb-0 pb-5  sm:aspect-[16/8] aspect-square   flex sm:flex-row flex-col-reverse items-center justify-start max-w-[1340px] m-auto">
             <div class="w-full sm:w-1/2 sm:pl-10 pl-4 ">
@@ -173,16 +193,16 @@
             </div>
         </div>
     </div> -->
-    <div class="mb-16 ">
-        <div class="bg-gray-100">
+    <div class="mb-28  bg-zinc-100 relative sm:pb-20 pb-28 h-fit">
+        <div class="img absolute bottom-0 opacity-60 w-[100%] h-[calc(100%-3rem)] " style=" background-image: url('bannerDynamicSolution.png'); background-size: cover;background-repeat: no-repeat;"></div>
+        <div class="relative">
             <div class="px-4  py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
                 <div class=" max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12 mt-20">
-                    <div>
-                        <!-- <p class="inline-block px-3 py-px mb-4 text-xs font-semibold tracking-wider text-teal-900 uppercase rounded-full bg-teal-accent-400">
-                            Brand new
-                        </p> -->
+                    <div class="">
+                        <!-- <img src="bannerDynamicSolution.png" alt="" srcset="" class=" z-10 absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%]"> -->
+
                     </div>
-                    <h2 class="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl md:mx-auto">
+                    <h2 class="max-w-lg mb-6 z-20  font-sans text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl md:mx-auto">
                         <span class="relative inline-block">
                             <svg viewBox="0 0 52 24" fill="currentColor" class="absolute top-0 left-0 z-0 hidden w-32 -mt-8 -ml-20 text-gray-400 lg:w-32 lg:-ml-28 lg:-mt-10 sm:block">
                                 <defs>
@@ -196,14 +216,14 @@
                         </span>Get Your Device Fixed Today
                         <p class="text-base text-gray-700 md:text-lg mt-2 font-[400]">
                             Professional repairs with cost-effective pricing for your devices and gadgets.
-
                         </p>
+                    </h2>
                 </div>
                 <div class="flex items-center sm:justify-center">
-                    <a href="contact"><button type="submit" class="inline-flex items-center justify-center h-12 px-6 mr-6 font-medium tracking-wide text-white transition-all duration-200 rounded shadow-md shadow-purple-300 hover:shadow-none bg-purple-600 hover:bg-purple-700 focus:shadow-outline focus:outline-none">
+                    <a href="signup"><button type="submit" class="inline-flex items-center justify-center h-12 px-6 mr-6 font-medium tracking-wide text-white transition-all duration-200 rounded shadow-md shadow-purple-300 hover:shadow-none bg-purple-600 hover:bg-purple-700 focus:shadow-outline focus:outline-none">
                             Get started
                         </button></a>
-                    <a href="/" aria-label="" class="inline-flex items-center font-semibold text-gray-800 transition-colors duration-200 hover:text-deep-purple-accent-700">Learn more</a>
+                    <a href="#steps" aria-label="" class="inline-flex items-center font-semibold text-gray-800 transition-colors duration-200 hover:text-deep-purple-accent-700">Learn more</a>
                 </div>
             </div>
         </div>
@@ -237,29 +257,29 @@
             </div>
         </div> -->
 
-        <form id='proceed_form' class="relative px-4 sm:px-0" action="appointment">
+        <form id='proceed_form' class="absolute left-[50%] -translate-x-[50%]  bg-white rounded  " action="appointment">
             <input type="text" value="" name="nameindex" id="hfindex" hidden>
-            <div class="absolute inset-0 bg-gray-100 h-1/2"></div>
-            <div class="relative py-10 flex justify-evenly items-center flex-col sm:flex-row gap-5 mx-auto overflow-hidden bg-white divide-y rounded shadow w-[60%] sm:w-full sm:divide-y-0 sm:divide-x sm:max-w-screen-sm sm:grid-cols-3 lg:max-w-screen-md">
-                <div class="custom-select w-[67%] sm:w-[29%]">
-                    <select id="selectBox">
+            <div class="relative py-10   flex justify-evenly flex-col items-center px-2 sm:flex-row gap-5  overflow-hidden  divide-y rounded shadow w-[60%] min-w-[360px] sm:min-w-[600px] md:min-w-[700px] sm:w-full sm:divide-y-0 sm:divide-x sm:max-w-screen-sm sm:grid-cols-3 lg:max-w-screen-md">
+                <div class="custom-select w-[67%] max-w-[250px] text-xs sm:text-base">
+                    <select id="selectBox" class='font-semibold '>
                         <option value="" disabled selected hidden class="font-xs">Select A Category</option>
                         <option value="1">Appliances</option>
                         <option value="2">Computers</option>
                         <option value="3">Mobile Devices</option>
                         <option value="4">Plumbers</option>
                     </select>
-                    <div class="arrow"></div>
+                    <div class="arrow flex justify-center items-center">
+                        <i class="fa-sharp fa-solid fa-circle-chevron-down  text-zinc-700"></i>
+                    </div>
                 </div>
-
                 <div class="flex gap-4 justify-center items-center px-3 py-2  border-2 border-white rounded-md">
                     <p class="font-semibold">Get Current Location</p>
-                    <div class="h-9 w-9 cursor-pointer rounded-full bg-gray-400 flex justify-center items-center hover:bg-gray-500" id="currLoc">
-                        <i class="fa-solid fa-location-crosshairs text-xl"></i>
+                    <div class="h-9 min-w-[2.25rem] cursor-pointer rounded-full shadow-lg shadow-green-300 bg-green-400 flex justify-center items-center hover:bg-green-500" id="currLoc">
+                        <i class="fa-solid fa-location-crosshairs text-xl text-white"></i>
                     </div>
                 </div>
 
-                <button class="h-9 w-32 bg-indigo-600 font-semibold rounded-md text-white cursor-pointer" id="proceed-category" onclick="return event.preventDefault()">Proceed
+                <button class="inline-flex items-center px-4 py-2 font-semibold text-white transition-all duration-200 rounded shadow-md shadow-purple-300 hover:shadow-none bg-purple-600 hover:bg-purple-700 focus:shadow-outline focus:outline-none" id="proceed-category" onclick="return event.preventDefault()">Proceed
                 </button>
 
                 <input type="text" value="" id="hflat" hidden>
@@ -306,13 +326,13 @@
                 </p> -->
             </div>
             <h5 class="mb-3 text-3xl font-extrabold leading-none sm:text-4xl">
-                Your new ideal style
+                Expertise and Experience You Can Trust
             </h5>
             <p class="mb-5 text-gray-800">
-                <span class="font-bold">Lorem ipsum</span> dolor sit amet, consectetur adipiscing elit. Etiam sem neque, molestie sit amet venenatis et, dignissim ut erat. Sed aliquet velit id dui eleifend, sed consequat odio sollicitudin.
+                <span class="font-bold">Dynamic Solution</span> offer a wide range of [service or solution] that are tailored to meet your specific needs and requirements. Whether you are looking for [specific service or solution], we have the expertise and resources to deliver results that exceed your expectations.
             </p>
             <div class="flex items-center">
-                <button type="submit" class="inline-flex items-center justify-center h-12 px-6 mr-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none">
+                <button type="submit" class="inline-flex items-center justify-center h-12 px-6 mr-6 font-medium tracking-wide text-white transition-all duration-200 rounded shadow-md shadow-purple-300 hover:shadow-none bg-purple-600 hover:bg-purple-700 focus:shadow-outline focus:outline-none">
                     Get started
                 </button>
                 <a href="/" aria-label="" class="inline-flex items-center font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800">
@@ -406,7 +426,7 @@
 <div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
     <div class="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
         <div>
-            <p class="inline-block px-3 py-px mb-4 text-xs font-semibold tracking-wider text-teal-900 uppercase rounded-full bg-teal-accent-400">
+            <p id="our_services" class="inline-block px-3 py-px mb-4 text-xs font-semibold tracking-wider text-teal-900 uppercase rounded-full bg-teal-accent-400">
                 Our Services
             </p>
         </div>
@@ -420,12 +440,11 @@
                     </defs>
                     <rect fill="url(#18302e52-9e2a-4c8e-9550-0cbb21b38e55)" width="52" height="24"></rect>
                 </svg>
-                <span class="relative">The</span>
-            </span>
-            Lorem ipsum dolor
+                <span class="relative capitalize">Below are the services that we provide </span>
         </h2>
         <p class="text-base text-gray-700 md:text-lg">
-            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque rem aperiam, eaque ipsa quae.
+            In appliances, we provide local services in ac, and coolers, In the computer we provide services in repairing computers and peripheral devices, in Mobile Devices we provide local service to repair and maintain phones, we also provide local electricians to solve problems locally and last but not least we also provide plumbing services by local available plumbers.
+
         </p>
     </div>
     <div class="grid gap-8 row-gap-5 lg:grid-cols-3">
@@ -465,7 +484,7 @@
 
 
 
-<div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+<div id="steps" class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
     <div class="grid gap-6 row-gap-10 lg:grid-cols-2">
         <div class="lg:py-6 lg:pr-16">
             <div class="flex">
@@ -481,9 +500,9 @@
                     <div class="w-px h-full bg-gray-300"></div>
                 </div>
                 <div class="pt-1 pb-8">
-                    <p class="mb-2 text-lg font-bold">Step 1</p>
-                    <p class="text-gray-700">
-                        All recipes are written using certain conventions, which define the characteristics of common ingredients. The rules vary from place to place.
+                    <p class="mb-2 text-lg font-bold ">Step 1</p>
+                    <p class="text-gray-700 capitalize font-semibold">
+                        select your category & enable your current location
                     </p>
                 </div>
             </div>
@@ -501,8 +520,8 @@
                 </div>
                 <div class="pt-1 pb-8">
                     <p class="mb-2 text-lg font-bold">Step 2</p>
-                    <p class="text-gray-700">
-                        The first mate and his Skipper too will do their very best to make the others comfortable in their tropic island nest. Michael Knight a young loner.
+                    <p class="text-gray-700 capitalize font-semibold">
+                        select registered professionals available near you and proceed
                     </p>
                 </div>
             </div>
@@ -520,8 +539,8 @@
                 </div>
                 <div class="pt-1 pb-8">
                     <p class="mb-2 text-lg font-bold">Step 3</p>
-                    <p class="text-gray-700">
-                        Tell them I hate them. Is the Space Pope reptilian!? Tell her she looks thin. Hello, little man. I will destroy you!
+                    <p class="text-gray-700 capitalize font-semibold">
+                        select time&date that suits you well and works for you
                     </p>
                 </div>
             </div>
@@ -539,8 +558,8 @@
                 </div>
                 <div class="pt-1 pb-8">
                     <p class="mb-2 text-lg font-bold">Step 4</p>
-                    <p class="text-gray-700">
-                        If one examines precultural libertarianism, one is faced with a choice: either accept rationalism or conclude that context is a product.
+                    <p class="text-gray-700 capitalize font-semibold">
+                        then enter your further details and select your payment method place your repair order you will get your order confirmation
                     </p>
                 </div>
             </div>
@@ -555,7 +574,7 @@
                     </div>
                 </div>
                 <div class="pt-1">
-                    <p class="mb-2 text-lg font-bold">Success</p>
+                    <p class="mb-2 text-lg font-bold capitalize">your repairs will be done & you can provide your review and feedback.</p>
                     <p class="text-gray-700"></p>
                 </div>
             </div>
@@ -585,20 +604,24 @@
         <h2 class="mb-10 max-w-lg text-4xl font-bold leading-snug lg:text-5xl lg:leading-snug">A <span class="text-indigo-600">revolutionary</span> way to repair your devices</h2>
         <div class="grid gap-y-12 gap-x-8 lg:grid-cols-2">
             <div>
-                <p class="mb-6 border-l-4 border-indigo-600 pl-4 text-2xl leading-10">Launch Websites in minutes</p>
-                <p class=" text-gray-800">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam nihil reprehenderit laboriosam, exercitationem consectetur deserunt aliquam ab maiores!</p>
+                <p class="mb-6 border-l-4 border-indigo-600 pl-4 text-2xl leading-10">Get help in minutes
+                </p>
+                <p class=" text-gray-800">we provide locally available professionals who are available on our websit</p>
             </div>
             <div>
-                <p class="mb-6 border-l-4 border-indigo-600 pl-4 text-2xl leading-10">Never miss deadlines</p>
-                <p class=" text-gray-800">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam nihil reprehenderit laboriosam, exercitationem consectetur deserunt aliquam ab maiores!</p>
+                <p class="mb-6 border-l-4 border-indigo-600 pl-4 text-2xl leading-10">We never miss your schedule</p>
+                <p class=" text-gray-800">Once your Time&date are scheduled we get in touch with you and provide our service without delay
+                </p>
             </div>
             <div>
-                <p class="mb-6 border-l-4 border-indigo-600 pl-4 text-2xl leading-10">Super Intuitive</p>
-                <p class=" text-gray-800">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam nihil reprehenderit laboriosam, exercitationem consectetur deserunt aliquam ab maiores!</p>
+                <p class="mb-6 border-l-4 border-indigo-600 pl-4 text-2xl leading-10">speedy Services </p>
+                <p class="text-gray-800">we provide our services by the deadline and try our best to meet them and provide satisfactory results to our customers
+
+                </p>
             </div>
             <div>
-                <p class="mb-6 border-l-4 border-indigo-600 pl-4 text-2xl leading-10">Speedy Websites</p>
-                <p class="text-lg text-gray-800">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam nihil reprehenderit laboriosam, exercitationem consectetur deserunt aliquam ab maiores!</p>
+                <p class="mb-6 border-l-4 border-indigo-600 pl-4 text-2xl leading-10">We take feedback and review</p>
+                <p class=" text-gray-800">we take our customer's reviews and feedback that they provide for our services.</p>
             </div>
         </div>
     </div>
@@ -622,9 +645,9 @@
                     </svg>
                 </div>
             </div>
-            <p class="mb-2 font-bold md:text-lg">Downloads</p>
+            <p class="mb-2 font-bold md:text-lg">Repairs</p>
             <p class="text-gray-700">
-                Three movie stars, Chloe, Lexa, and Jon, are filming a movie in the Amazon. They’re very famous and very high-maintenance effort.
+                Our website helped more than 86k repairs and with reviews and feedback received from our customers
             </p>
         </div>
         <div>
@@ -640,13 +663,14 @@
             </div>
             <p class="mb-2 font-bold md:text-lg">Subscribers</p>
             <p class="text-gray-700">
-                One day, after filming a scene deep in the rainforest, the three actors and their agents decide to head back to home base by foot.
+                Our website also provides a range of premium service plans for our subscribed customers
+
             </p>
         </div>
         <div>
             <div class="flex">
                 <h6 class="mr-2 text-4xl font-bold md:text-5xl text-deep-purple-accent-400">
-                    52M
+                    10-15
                 </h6>
                 <div class="flex items-center justify-center rounded-full bg-teal-accent-400 w-7 h-7">
                     <svg class="text-teal-900 w-7 h-7" stroke="currentColor" viewBox="0 0 52 52">
@@ -654,9 +678,9 @@
                     </svg>
                 </div>
             </div>
-            <p class="mb-2 font-bold md:text-lg">Cookies</p>
+            <p class="mb-2 font-bold md:text-lg">Professionals</p>
             <p class="text-gray-700">
-                Suddenly, they come to a large river. On the riverbank, they find a small rowboat, but it’s only big enough to hold two of them at one time.
+                get help from our professionals available near you by using your location.
             </p>
         </div>
     </div>
@@ -676,7 +700,7 @@
 
     <!-- PRICING -->
 
-    <div class="lg:flex items-center justify-between my-20">
+    <div class="lg:flex items-center justify-between mb-20 -mt-20">
         <div class="lg:w-1/2 w-full">
             <p class="text-base leading-4 text-gray-600 dark:text-gray-200">Choose your plan</p>
             <h1 role="heading" class="md:text-5xl text-3xl font-bold leading-10 mt-3 text-gray-800 dark:text-white">Our pricing plan</h1>
@@ -688,7 +712,7 @@
                 </button>
             </div>
         </div>
-        <div class="xl:w-1/2 lg:w-7/12 relative w-full lg:mt-0 mt-12 md:px-8" role="list">
+        <div class="xl:w-1/2 lg:w-7/12 relative w-full lg:mt-0  md:px-8" role="list">
             <img src="https://i.ibb.co/0n6DSS3/bgimg.png" class="absolute w-full -ml-12 mt-24" alt="background circle images" />
             <div role="listitem" class="bg-gray-50 dark:bg-gray-800 cursor-pointer shadow-md rounded-lg p-8 relative z-30">
                 <div class="md:flex items-center justify-between">
@@ -767,12 +791,13 @@
                 </div>
                 <div class="max-w-xl mb-6">
                     <h2 class="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none">
-                        Let us handle<br class="hidden md:block" />
-                        your next
-                        <span class="inline-block text-deep-purple-accent-400">destination</span>
+                        Let us handle the repair and maintenance of your household<br class="hidden md:block" />
+
+
                     </h2>
                     <p class="text-base text-gray-700 md:text-lg">
-                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae. explicabo.
+                        By providing multiple services and multiple options for maximum customer service and satisfaction and our team will ensure smooth and secure transactions between our professionals our website is one-the stop solution for all your household repair needs
+
                     </p>
                 </div>
                 <div>
@@ -829,7 +854,6 @@
         <div class="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
             <div>
                 <p class="inline-block px-3 py-px mb-4 text-xs font-semibold tracking-wider text-teal-900 uppercase rounded-full bg-teal-accent-400">
-                    About Company
                 </p>
             </div>
             <h2 class="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl md:mx-auto">
@@ -842,12 +866,13 @@
                         </defs>
                         <rect fill="url(#679d5905-e08c-4b91-a66c-84aefbb9d2f5)" width="52" height="24"></rect>
                     </svg>
-                    <span class="relative">The</span>
+                    <span class="relative"> About us </span>
                 </span>
-                Lorem ipsum dolor sit amet consectetur.
+
             </h2>
             <p class="text-base text-gray-700 md:text-lg">
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque rem aperiam, eaque ipsa quae.
+                In the Below video, we explained our visions and ideas for our ambitious project and our goal to help to meet every household's daily repair needs.
+
             </p>
         </div>
         <div class="mx-auto lg:max-w-2xl">
@@ -869,6 +894,72 @@
     <!-- //ABOUT COMPANY -->
 </div>
 <script>
+    const accessToken = getParameterByName("access_token");
+    fetch("https://www.googleapis.com/oauth2/v1/userinfo?access_token=" + accessToken)
+        .then(response => response.json())
+        .then(data => {
+            var email = data.email;
+            var username = data.name;
+            if (email === undefined) {
+                console.log("undefined");
+            } else {
+                console.log("Logged-in email: " + email);
+                console.log("Logged-in data: " + username);
+
+                var xhr = new XMLHttpRequest;
+                xhr.open('GET', `gLogin?email=${email}&username=${username}`);
+                xhr.onload = () => {
+                    console.log(xhr.responseText)
+                    if (xhr.responseText == 'session created') {
+                        document.getElementById('ancher_id').remove();
+                        document.getElementById('anchor_signin').innerHTML.remove();
+                        document.getElementById('registration_btn').innerHTML = `<a href="account" class="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-purple-600 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none" aria-label="Sign In" title="Sign In">
+                                Account
+                            </a>`;
+                        document.getElementById('anchor_signin').innerHTML = `
+                        <a id='logout' href='signin' class="flex justify-start items-center space-x-6 hover:text-white focus:bg-gray-700 focus:text-white hover:bg-gray-700 text-gray-400 rounded px-3 py-2  w-full md:w-52">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M17 11H7C5.89543 11 5 11.8955 5 13V19C5 20.1046 5.89543 21 7 21H17C18.1046 21 19 20.1046 19 19V13C19 11.8955 18.1046 11 17 11Z" stroke="#9CA3AF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M12 17C12.5523 17 13 16.5523 13 16C13 15.4477 12.5523 15 12 15C11.4477 15 11 15.4477 11 16C11 16.5523 11.4477 17 12 17Z" stroke="#9CA3AF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M8 11V7C8 5.93913 8.42143 4.92172 9.17157 4.17157C9.92172 3.42143 10.9391 3 12 3C13.0609 3 14.0783 3.42143 14.8284 4.17157C15.5786 4.92172 16 5.93913 16 7V11" stroke="#9CA3AF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        <p class="text-base leading-4 ">Log out</p>
+                    </a>
+                        `;
+
+                    }
+                }
+                xhr.send()
+            }
+        })
+        .catch(error => {
+            console.error("Failed to retrieve user profile: ", error);
+        });
+
+    function getParameterByName(name, url) {
+        if (!url) url = window.location.href;
+        name = name.replace(/[\[\]]/g, "\\$&");
+        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+            results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return "";
+        return decodeURIComponent(results[2].replace(/\+/g, " "));
+    }
+
+    function signOut() {
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', 'https://accounts.google.com/o/oauth2/revoke?token=' + accessToken);
+        xhr.send();
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                console.log('User signed out successfully');
+                window.location.href = "/login";
+            } else {
+                console.log('Error revoking token');
+            }
+        };
+    }
+
     const select = document.querySelector('.custom-select select');
     const arrow = document.querySelector('.custom-select .arrow');
 

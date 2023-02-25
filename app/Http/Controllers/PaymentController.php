@@ -3,11 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Models\order;
+use Carbon\Carbon;
 use App\Models\services;
 use App\Models\technician;
+use Dompdf\Dompdf;
 use App\Models\users_account;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 class PaymentController extends Controller
 {
     
@@ -16,7 +19,9 @@ class PaymentController extends Controller
         $date_selected = $request->input('date_selected');
         $rapid_slot = $request->input('rapid_radio');
         $slot = $request->input('selected_slot');
+        
         $technician = $request->input('selected_technician');
+        // $request->session()->put('technician',$technician);
         $t_contactno=DB::table("technicians")->select('contact')->where("name",$technician)->value('contact');
         $s_id=DB::table("technicians")->where("name",$technician)->value('s_id');
         $image=DB::table("services")->where('s_id',$s_id)->value('image');
@@ -50,11 +55,56 @@ class PaymentController extends Controller
         $order->service_date=$service_date;
         $order->time_slote=$time_slote;
         $order->order_no=$order_no;
+        $order->booking_time=Carbon::now();
         $order->phone_number=$phone_number;
         $order->t_name=$t_name;
         $order->save();
         echo "order_placed ";
+        echo "t_name ===  ".$t_name; 
         echo "user ==  ".$req->session()->get('user');
 
+    }
+
+    function generatePDF()
+    {
+        $id = 1;
+        $username = users_account::where('u_id', $id)->value('username');
+
+        $orders = DB::table('orders')
+        ->select('orders.*', 'users_accounts.username as users_accounts_username')
+        ->join('users_accounts', 'orders.u_id', '=', 'users_accounts.u_id')
+        ->where('orders.u_id', '=', $id)
+            ->get();
+
+        $html = `<h1>Orders Report For $username</h1>`;
+        $html .= '<table class="border-2">';
+        $html .= '<tr><th>Technician</th><th>Date of Service</th><th>Time Slot</th><th>Amount</th><th>Booking Time</th><th>Txn Id</th><th>Technician Phone</th></tr>';
+        foreach ($orders as $order) {
+            $html .= '<tr>';
+            $html .= '<td>' . $order->t_name . '</td>';
+            $html .= '<td>' . $order->service_date . '</td>';
+            $html .= '<td>' . $order->time_slote . '</td>';
+            $html .= '<td>' . $order->o_amount . '</td>';
+            $html .= '<td>' . $order->booking_time . '</td>';
+            $html .= '<td>' . $order->order_no . '</td>';
+            $html .= '<td>' . $order->phone_number . '</td>';
+            $html .= '</tr>';
+        }
+        $html .= '</table>';
+
+        $dompdf = new Dompdf();
+
+        $dompdf->loadHtml($html);
+
+        $dompdf->setPaper('A4', 'portrait');
+
+        $dompdf->render();
+
+        $pdf = $dompdf->output();
+
+        return new Response($pdf, 200, [
+            'Content-Type' => 'application/pdf',
+            'Content-Disposition' => 'attachment; filename="orders_report.pdf"'
+        ]);
     }
 }

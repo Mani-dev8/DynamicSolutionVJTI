@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AccountController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ServicesController;
 use App\Http\Controllers\TechnicianController;
@@ -20,15 +21,20 @@ use Illuminate\Support\Facades\Route;
 Route::get('/home', [ServicesController::class, 'serviceFetch']);
 Route::get('/appointment', [TechnicianController::class, 'techniciansFetch']);
 Route::view('/login', 'login');
+Route::post('/register', [UserAuth::class, 'createUser']);
+Route::get('/generate-pdf', [PaymentController::class, 'generatePDF']);
+Route::get('/logout', [UserAuth::class,'logoutFunc']);
 Route::view('/signup', 'signup');
 Route::view('/aboutus', 'aboutus');
 Route::get('', [ServicesController::class, 'serviceFetch']);
 Route::view('/cart', 'cart');
 Route::view('/services', 'services');
 Route::view('/contact', 'contact');
+Route::view('/accountdetails','accounts');
 Route::view('/checkout', 'checkout');
 Route::view('/checkout_page', 'checkout');
-Route::view('/account', 'accounts');
+Route::get('/gLogin',[UserAuth::class,'gLoginFunc']);
+Route::get('/account', [AccountController::class, 'accountFetch']);
 Route::get('/summary', [PaymentController::class, 'payFunc']);
 Route::post('/order', [PaymentController::class, 'orderFunc']);
 Route::controller(UserAuth::class)->group(function () {
