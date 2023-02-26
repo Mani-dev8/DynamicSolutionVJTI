@@ -65,10 +65,11 @@ class PaymentController extends Controller
 
     }
 
-    function generatePDF()
+    function generatePDF(Request $req)
     {
-        $id = 1;
-        $username = users_account::where('u_id', $id)->value('username');
+        $user=$req->session()->get('user');
+        $username = users_account::where('username', $user)->value('username');
+        $id = users_account::where('username', $username)->value('u_id');
 
         $orders = DB::table('orders')
         ->select('orders.*', 'users_accounts.username as users_accounts_username')
@@ -90,6 +91,7 @@ class PaymentController extends Controller
             $html .= '<td>' . $order->phone_number . '</td>';
             $html .= '</tr>';
         }
+        
         $html .= '</table>';
 
         $dompdf = new Dompdf();

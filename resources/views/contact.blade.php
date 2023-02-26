@@ -53,7 +53,7 @@
         position: relative;
     }
 </style>
-<section class="top-section h-[200px] flex flex-col justify-center items-center gap-3 bg-slate-600">
+<section class="top-section h-[200px] flex  pt-20 flex-col justify-center items-center gap-3 bg-slate-600">
     <!-- <img src="steve-johnson-hokONTrHIAQ-unsplash.jpg" class="opacity-50 h-full w-full relative"> -->
     <h2 class="text-4xl font-semibold text-white">Contact Us</h2>
     <span class="flex gap-3">
@@ -76,7 +76,7 @@
                         <i class="fa-sharp fa-solid fa-location-dot text-red-500 text-[23px] pr-4 py-2"></i>
                         <div class="flex flex-col gap-1">
                             <h3 class="text-white text-xl font-semibold">Our Location</h3>
-                            <p class="break-words text-[#F5F5F5] text-[12px] font-semibold leading-relaxed max-width-[170px]">8737 Valley Blvd, Rosemead, CA 919770, United States</p>
+                            <p class="break-words text-[#F5F5F5] text-[12px] font-semibold leading-relaxed max-width-[170px]">Sector-D, Nehru Nagar,Mumbai (W) -400601 </p>
                         </div>
                     </div>
 
@@ -99,24 +99,37 @@
                 </div>
             </div>
         </div>
-
-        <div class="right min-w-[60%] px-10 py-10 bg-white flex flex-col gap-7">
+        <form action="home" id='formMessage' class="right min-w-[60%] px-10 py-10 bg-white flex flex-col gap-7">
             <div class="flex gap-5">
-                <input type="text" placeholder="Name" class="min-w-[48%] border-0 bg-[#F5F5F5]">
-                <input type="text" placeholder="Subject" class="min-w-[48%] border-0 bg-[#F5F5F5]">
+                <input type="text" required placeholder="Name" class="min-w-[48%] border-0 bg-[#F5F5F5]">
+                <input type="text" required placeholder="Subject" class="min-w-[48%] border-0 bg-[#F5F5F5]">
             </div>
 
             <div class="flex gap-5">
-                <input type="email" placeholder="Email" class="min-w-[48%] border-0 bg-[#F5F5F5]">
-                <input type="text" placeholder="Phone" class="min-w-[48%] border-0 bg-[#F5F5F5]">
+                <input type="email" required placeholder="Email" class="min-w-[48%] border-0 bg-[#F5F5F5]">
+                <input type="text" required placeholder="Phone" class="min-w-[48%] border-0 bg-[#F5F5F5]">
             </div>
 
             <textarea placeholder="Your Message" class="w-[99%] border-0 bg-[#F5F5F5]"></textarea>
 
             <div class="w-full flex justify-center items-center">
-                <input type="button" value="Send Message" class="h-11 w-32 rounded-full bg-indigo-600 font-semibold text-white cursor-pointer hover:bg-indigo-500">
+                <input type="button" id='formbtn' value="Send Message" class="h-11 w-32 rounded-full bg-indigo-600 font-semibold text-white cursor-pointer hover:bg-indigo-500">
             </div>
-        </div>
+            <script>
+                var formbtn = document.getElementById('formbtn');
+                formbtn.addEventListener('click', (e) => {
+                    var form = document.getElementById('formMessage');
+                    e.preventDefault()
+                    if (form.checkValidity()) {
+                        toastr.success('Form Submited', 'Success', {
+                            closeButton: true,
+                            progressBar: true,
+                            positionClass: 'toast-center'
+                        });
+                    }
+                })
+            </script>
+        </form>
     </div>
 </section>
 
@@ -152,7 +165,7 @@
     window.onscroll = function() {
         scrollFunction();
     };
-    
+
     function scrollFunction() {
         if (
             document.body.scrollTop > 200 ||

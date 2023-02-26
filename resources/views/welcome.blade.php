@@ -271,7 +271,7 @@
                     </a>
                     <ul class=" items-center hidden space-x-8 lg:flex">
                         <li><a href="/" aria-label="Our product" title="Our product" class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400">Home</a></li>
-                        <li><a href="/features" aria-label="Our product" title="Our product" class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400">Features</a></li>
+                        <li><a href="/feature" aria-label="Our product" title="Our product" class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400">Features</a></li>
                         <li><a href="/contact" aria-label="Product pricing" title="Product pricing" class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400">Contact</a></li>
                         <li><a href="/aboutus" aria-label="About us" title="About us" class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400">About us</a></li>
                         <li id='registration_btn'>
@@ -311,7 +311,7 @@
 
             @yield('content')
         </div>
-        <footer id="footer_desk" class="footer dark:bg-purple-900 relative w-full -mt-8">
+        <footer id="footer_desk" class="footer  dark:bg-purple-900 relative w-full ">
             <!-- <input type="checkbox" name="" id="" class="absolute right-0 peer/foot w-full opacity-0 z-30 h-10 cursor-pointer">
             <span class="text-black absolute  peer-checked/foot:rotate-90 font-semibold dark:text-white">></span>
             <h1 class="text-black w-fit  m-auto dark:text-white">more info </h1> -->
@@ -449,20 +449,24 @@
                     </svg>
                     <p class="text-base leading-4  ">About us</p>
                 </button>
-                <button class="flex justify-start items-center space-x-6 hover:text-white focus:bg-gray-700 focus:text-white hover:bg-gray-700 text-gray-400 rounded px-3 py-2  w-full md:w-52">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244" />
-                    </svg>
+                <a href="contact">
+                    <button class="flex justify-start items-center space-x-6 hover:text-white focus:bg-gray-700 focus:text-white hover:bg-gray-700 text-gray-400 rounded px-3 py-2  w-full md:w-52">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244" />
+                        </svg>
 
-                    <p class="text-base leading-4  ">Contact Us</p>
-                </button>
+                        <p class="text-base leading-4  ">Contact Us</p>
+                    </button>
+                </a>
             </div>
         </div>
         <div class="flex flex-col justify-center items-start   px-6 border-b border-gray-600 w-full  ">
-            <button onclick="showMenu2(true)" class="focus:outline-none focus:text-indigo-400  text-white flex justify-between items-center w-full py-5 space-x-14  ">
-                <p class="text-sm leading-5 uppercase   ">Account</p>
-                <img id="icon2" class="transform rotate-180" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/sidebar2-svg7.svg" alt="arrow" />
-            </button>
+            <a href="account">
+                <button onclick="showMenu2(true)" class="focus:outline-none focus:text-indigo-400  text-white flex justify-between items-center w-full py-5 space-x-14  ">
+                    <p class="text-sm leading-5 uppercase   ">Account</p>
+                    <img id="icon2" class="transform rotate-180" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/sidebar2-svg7.svg" alt="arrow" />
+                </button>
+            </a>
             <div class=" flex justify-start flex-col items-start pb-5 ">
                 <button class="flex justify-start items-center space-x-6 hover:text-white focus:bg-gray-700 focus:text-white hover:bg-gray-700 text-gray-400 rounded px-3 py-2  w-full md:w-52">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
@@ -510,7 +514,7 @@
                 </a>
                 @else
                 <div id="anchor_signin">
-                    <a id='signin' href='signin' class="flex justify-start items-center space-x-6 hover:text-white focus:bg-gray-700 focus:text-white hover:bg-gray-700 text-gray-400 rounded px-3 py-2  w-full md:w-52">
+                    <a id='signin' href='login' class="flex justify-start items-center space-x-6 hover:text-white focus:bg-gray-700 focus:text-white hover:bg-gray-700 text-gray-400 rounded px-3 py-2  w-full md:w-52">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M17 11H7C5.89543 11 5 11.8955 5 13V19C5 20.1046 5.89543 21 7 21H17C18.1046 21 19 20.1046 19 19V13C19 11.8955 18.1046 11 17 11Z" stroke="#9CA3AF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                             <path d="M12 17C12.5523 17 13 16.5523 13 16C13 15.4477 12.5523 15 12 15C11.4477 15 11 15.4477 11 16C11 16.5523 11.4477 17 12 17Z" stroke="#9CA3AF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
@@ -550,7 +554,7 @@
         var accessToken2 = getParameterByName("access_token");
         if (accessToken2 != null) {
             document.getElementById('ancher_id').remove();
-            document.getElementById('anchor_signin').innerHTML="";
+            document.getElementById('anchor_signin').innerHTML = "";
             document.getElementById('registration_btn').innerHTML = `<a href="account" class="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-purple-600 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none" aria-label="Sign In" title="Sign In">
                                 Account
                             </a>`;
@@ -571,6 +575,9 @@
             document.getElementById('Main').style.display = "none";
             document.getElementById('header').style.display = "none";
             document.getElementById('footer_desk').style.display = "none";
+        }
+        if (window.location.href.includes("signup")) {
+            document.getElementById('footer_desk').style.display = 'none';
         }
         const swiper = new Swiper(".mySwiper", {
             slidesPerView: "auto",

@@ -702,14 +702,14 @@
 
     <div class="lg:flex items-center justify-between mb-20 -mt-20">
         <div class="lg:w-1/2 w-full">
-            <p class="text-base leading-4 text-gray-600 dark:text-gray-200">Choose your plan</p>
-            <h1 role="heading" class="md:text-5xl text-3xl font-bold leading-10 mt-3 text-gray-800 dark:text-white">Our pricing plan</h1>
-            <p role="contentinfo" class="text-base leading-5 mt-5 text-gray-600 dark:text-gray-200">"Get more out of your devices with our maintenance and repair subscriptions"</p>
+            <p class="text-base leading-4 text-gray-600">Choose your plan</p>
+            <h1 role="heading" class="md:text-5xl text-3xl font-bold leading-10 mt-3 text-gray-800 ">Our pricing plan</h1>
+            <p role="contentinfo" class="text-base leading-5 mt-5 text-gray-600 ">"Get more out of your devices with our maintenance and repair subscriptions"</p>
             <div class="w-56">
-                <button onclick="toggleIt()" class="bg-gray-100 dark:bg-gray-800 shadow rounded-full flex items-center mt-10 ">
+                <!-- <button onclick="toggleIt()" class="bg-gray-100 dark:bg-gray-800 shadow rounded-full flex items-center mt-10 ">
                     <div class="bg-gray-100 dark:bg-gray-800 focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 focus:outline-none text-base leading-none text-gray-600 dark:text-gray-200 rounded-full py-4 px-6 mr-1" id="monthly">Monthly</div>
                     <div class="bg-indigo-700 focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 focus:outline-none text-base leading-none text-white rounded-full py-4 px-6" id="annually">Annually</div>
-                </button>
+                </button> -->
             </div>
         </div>
         <div class="xl:w-1/2 lg:w-7/12 relative w-full lg:mt-0  md:px-8" role="list">
@@ -717,7 +717,7 @@
             <div role="listitem" class="bg-gray-50 dark:bg-gray-800 cursor-pointer shadow-md rounded-lg p-8 relative z-30">
                 <div class="md:flex items-center justify-between">
                     <h2 class="text-2xl font-semibold md:mt-0 mt-4 leading-6 text-gray-800 dark:text-white">Basic Maintenance Plan</h2>
-                    <p class="text-2xl md:mt-0 mt-4 font-semibold leading-6 text-gray-800 dark:text-white ">₹1999<span class="font-normal text-base">/mo</span></p>
+                    <p class="text-2xl md:mt-0 mt-4 font-semibold leading-6 text-gray-800 dark:text-white ">₹999<span class="font-normal text-base">/mo</span></p>
                 </div>
                 <p class="md:w-80 text-base leading-6 mt-4 text-gray-600 dark:text-gray-200">Keep your devices in top condition with our annual maintenance plan. Includes one annual device check-up, cleaning, and minor repairs. </p>
             </div>
@@ -726,7 +726,7 @@
                 <div class="w-full p-8">
                     <div class="md:flex items-center justify-between">
                         <h2 class="text-2xl font-semibold leading-6 text-gray-800 dark:text-white">Priority Repair Plan</h2>
-                        <p class="text-2xl md:mt-0 mt-4 font-semibold leading-6 text-gray-800 dark:text-white">₹2999<span class="font-normal text-base">/mo</span></p>
+                        <p class="text-2xl md:mt-0 mt-4 font-semibold leading-6 text-gray-800 dark:text-white">₹1999<span class="font-normal text-base">/mo</span></p>
                     </div>
                     <p class="md:w-80 text-base leading-6 mt-4 text-gray-600 dark:text-gray-200"> Get faster access to repair services with our priority repair plan. Includes priority scheduling, on-site repairs, and discounted pricing for repairs.</p>
                 </div>
