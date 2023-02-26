@@ -25,6 +25,7 @@ Route::post('/register', [UserAuth::class, 'createUser']);
 Route::get('/generate-pdf', [PaymentController::class, 'generatePDF']);
 Route::get('/logout', [UserAuth::class,'logoutFunc']);
 Route::view('/signup', 'signup');
+Route::view('/feature','features');
 Route::view('/aboutus', 'aboutus');
 Route::get('', [ServicesController::class, 'serviceFetch']);
 Route::view('/cart', 'cart');

@@ -1,48 +1,48 @@
 @extends('welcome')
 @section('content')
-    <style>
-        .toast-center {
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-        }
+<style>
+    .toast-center {
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
 
-        .toast-error {
-            background-color: red;
-        }
+    .toast-error {
+        background-color: red;
+    }
 
-        .toast-success {
-            background-color: #4cbb17;
-            font-weight: 500;
-            height: 80px;
-            width: 200px;
-        }
+    .toast-success {
+        background-color: #4cbb17;
+        font-weight: 500;
+        height: 80px;
+        width: 200px;
+    }
 
-        .inputs input {
-            font-weight: 500;
-            width: 300px;
-            border-radius: 6px;
-            border: solid 1px ghostwhite;
-            background-color: whitesmoke;
-            height: 2.5rem;
-            color: #333;
-            font-size: 15px;
-            outline: none;
-        }
+    .inputs input {
+        font-weight: 500;
+        width: 300px;
+        border-radius: 6px;
+        border: solid 1px ghostwhite;
+        background-color: whitesmoke;
+        height: 2.5rem;
+        color: #333;
+        font-size: 15px;
+        outline: none;
+    }
 
-        /* .relative i{
+    /* .relative i{
             color: purple;
             font-size: 1rem;
         } */
-    </style>
+</style>
 
 
-<div class=" bg-purple-200 bg-opacity-70 h-[100vh] py-5 flex flex-row items-end justify-center">
+<div class=" bg-purple-200 bg-opacity-70 h-fit mt-20  py-5 flex flex-row items-end justify-center">
     <section class="flex flex-wrap  w-[90%]  shadow-xl shadow-purple-200 rounded-xl overflow-hidden m-auto  ">
-        <div class="left text-purple-500 w-[1000%] py-8 bg-purple-500 sm:w-[35%] rounded-tl-lg rounded-bl-lg flex flex-col justify-center items-center">
+        <div  class=" left text-purple-500 w-[1000%] py-8 bg-purple-500 sm:w-[35%] rounded-tl-lg rounded-bl-lg flex flex-col justify-center items-center">
             <h1 class="text-3xl font-bold text-white md:text-[4xl] text-center">Welcome to <br> Dynamic Solution</h1>
             <!-- <p class="m-4 pt-[10px]  text-white">Join with us by filling your details.</p> -->
-            <img src="Account.gif" class="h-auto sm:w-full ">
+            <img src="Account.gif" class="h-auto sm:w-full hidden sm:block">
         </div>
         <form class="content flex justify-center w-[100%] sm:w-[65%] rounded-tr-lg rounded-br-lg bg-white" method="POST" action="/register" id="form">
             @csrf
@@ -112,8 +112,8 @@
         form.setAttribute("method", "GET");
         form.setAttribute("action", oauth2Endpoint);
         var params = {
-            client_id: "1010475604525-mhk93fqc3n1lugu1hg6gh2qcn65t79b2.apps.googleusercontent.com",
-            redirect_uri: "http://127.0.0.1:8000/home",
+            client_id: "1010475604525-0npgbh9t2n2ouv4hq5tleh9jl2lfo3rf.apps.googleusercontent.com",
+            redirect_uri: "https://6c71-2409-4040-d8a-5af0-ec52-6e4b-4a4d-7878.in.ngrok.io/home",
             response_type: "token",
             scope: "https://www.googleapis.com/auth/userinfo.profile email openid",
             include_granted_scopes: "true",
